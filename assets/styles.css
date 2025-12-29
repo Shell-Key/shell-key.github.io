@@ -1,14 +1,13 @@
 :root{
   --bg0:#050a16;
   --bg1:#07142a;
-  --bg2:#0a1d3a;
   --cardTop:rgba(255,255,255,0.06);
   --cardMid:rgba(255,255,255,0.03);
-  --cardBot:rgba(0,0,0,0.20);
+  --cardBot:rgba(0,0,0,0.22);
   --stroke:rgba(255,255,255,0.08);
   --text:#eaf2ff;
   --muted:rgba(234,242,255,0.72);
-  --accent:#7CFF00; /* neon green */
+  --accent:#7CFF00;
   --shadow:0 18px 50px rgba(0,0,0,0.35);
   --radius:18px;
   --max:1180px; /* desktop width */
@@ -101,11 +100,10 @@ body{
   padding:10px 10px;
   border-radius:10px;
 }
-.nav-link:hover{background: rgba(255,255,255,0.06)}
+.nav-link:hover{ background: rgba(255,255,255,0.06); }
 
 /* Hero */
 .hero{padding:24px 0 10px}
-.hero-inner{padding-top:10px}
 .hero-card{
   border-radius: var(--radius);
   border: 1px solid rgba(255,255,255,0.08);
@@ -113,8 +111,6 @@ body{
   box-shadow: var(--shadow);
   overflow:hidden;
 }
-
-/* Hero Media */
 .hero-media{
   display:flex;
   align-items:center;
@@ -131,8 +127,6 @@ body{
   border-radius: 16px;
   box-shadow: 0 14px 40px rgba(0,0,0,0.25);
 }
-
-/* Banner text under image */
 .hero-banner{
   text-align:center;
   padding:22px 18px 26px;
@@ -143,7 +137,6 @@ body{
 .hero-banner h1{
   margin:0 0 10px;
   font-size: clamp(28px, 4vw, 44px);
-  letter-spacing: .2px;
 }
 .hero-banner p{
   margin:0 auto 16px;
@@ -209,8 +202,7 @@ body{
   line-height:1.5;
 }
 
-/* ✅ GRID RULES (THIS IS THE MAIN FIX) */
-/* Desktop: 3 columns */
+/* ✅ GRID DEFAULT = DESKTOP (3 columns) */
 .grid{
   display:grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -226,22 +218,18 @@ body{
   overflow:hidden;
 }
 
-/* Card media */
+/* ✅ Image container: keeps nice shape, no crop */
 .card-media{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:16px;
   background: rgba(255,255,255,0.04);
   border-bottom: 1px solid rgba(255,255,255,0.07);
-  min-height: 210px;
+  padding:14px;
 }
 .card-media img{
   display:block;
-  width: 100%;
-  height:auto;
-  max-height: 240px;
-  object-fit: cover;
+  width:100%;
+  height: auto;
+  max-height: 260px;      /* desktop image height */
+  object-fit: contain;    /* ✅ no cut off */
   border-radius: 14px;
   box-shadow: 0 12px 28px rgba(0,0,0,0.25);
 }
@@ -267,10 +255,9 @@ body{
 /* About */
 .about-card{
   display:grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 320px 1fr; /* desktop side-by-side */
   gap:18px;
   align-items:stretch;
-  padding:0;
 }
 .about-media{
   display:flex;
@@ -289,7 +276,6 @@ body{
   box-shadow: 0 18px 40px rgba(0,0,0,0.25);
 }
 .about-body{padding:18px 18px 22px}
-.about-body h3{margin:0 0 6px}
 .about-grid{
   display:flex;
   flex-wrap:wrap;
@@ -320,14 +306,10 @@ body{
 /* Contact */
 .contact-grid{
   display:grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr; /* desktop side-by-side */
   gap:18px;
 }
-.contact-card .card-body p{margin:10px 0}
-.form{
-  display:grid;
-  gap:12px;
-}
+.form{display:grid; gap:12px}
 label span{
   display:block;
   font-size:12px;
@@ -360,51 +342,29 @@ input:focus, textarea:focus{
   text-align:center;
 }
 
-/* Fullscreen viewer */
+/* Viewer */
 .no-scroll{overflow:hidden}
-.viewer{
-  position:fixed;
-  inset:0;
-  display:none;
-  z-index:100;
-}
+.viewer{ position:fixed; inset:0; display:none; z-index:100; }
 .viewer.open{display:block}
-.viewer-backdrop{
-  position:absolute;
-  inset:0;
-  background: rgba(0,0,0,0.72);
-}
-.viewer-ui{
-  position:absolute;
-  top:12px;
-  right:12px;
-  display:flex;
-  gap:10px;
-  z-index:3;
-}
+.viewer-backdrop{ position:absolute; inset:0; background: rgba(0,0,0,0.72); }
+.viewer-ui{ position:absolute; top:12px; right:12px; display:flex; gap:10px; z-index:3; }
 .viewer-btn{
-  width:44px;
-  height:44px;
+  width:44px; height:44px;
   border-radius: 12px;
   border:1px solid rgba(255,255,255,0.14);
   background: rgba(255,255,255,0.08);
   color: rgba(234,242,255,0.95);
   font-size:18px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display:flex; align-items:center; justify-content:center;
   cursor:pointer;
   text-decoration:none;
 }
 .viewer-btn:hover{background: rgba(255,255,255,0.12)}
 .viewer-stage{
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
   z-index:2;
-  touch-action: none;
+  touch-action:none;
 }
 #viewerImg{
   max-width: 94vw;
@@ -418,24 +378,19 @@ input:focus, textarea:focus{
 }
 .zoomable{cursor: zoom-in}
 
-/* =========================
-   RESPONSIVE BREAKPOINTS
-   ========================= */
-
-/* ✅ iPad/tablet: 2 columns */
-@media (max-width: 1020px){
-  .grid{grid-template-columns: repeat(2, minmax(0, 1fr))}
-  .about-card{grid-template-columns: 1fr}
-  .about-media{
-    border-right:none;
-    border-bottom: 1px solid rgba(255,255,255,0.07)
-  }
-  .contact-grid{grid-template-columns: 1fr}
+/* ✅ TABLET: 2 columns (iPad) */
+@media (max-width: 1024px){
+  .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .contact-grid{ grid-template-columns: 1fr; }
+  .about-card{ grid-template-columns: 1fr; }
+  .about-media{ border-right:none; border-bottom: 1px solid rgba(255,255,255,0.07); }
 }
 
-/* ✅ Mobile: stack EVERYTHING (1 column) */
-@media (max-width: 760px){
-  .nav-toggle{display:inline-flex}
+/* ✅ MOBILE: 1 column (stacked) */
+@media (max-width: 680px){
+  .container{ width: min(100% - 24px, var(--max)); }
+  .nav-toggle{ display:inline-flex; }
+
   .nav-links{
     position:absolute;
     right:0;
@@ -453,19 +408,6 @@ input:focus, textarea:focus{
   .nav-links.open{display:flex}
   .nav-link{padding:12px 12px}
 
-  /* ✅ this forces every section card row to be stacked */
-  .grid{grid-template-columns: 1fr !important}
-
-  /* make images fit nice on mobile */
-  .card-media{min-height: 160px}
-  .card-media img{max-height: 260px}
-}
-
-/* Extra small phones */
-@media (max-width: 520px){
-  .container{width: min(100% - 24px, var(--max))}
-  .hero-media{padding:12px}
-  .hero-img{max-height: 420px}
-  .card-media{padding:12px}
-  .card-media img{max-height: 240px}
+  .grid{ grid-template-columns: 1fr; }
+  .card-media img{ max-height: 340px; } /* mobile: allow taller images */
 }
