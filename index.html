@@ -36,7 +36,6 @@
     </div>
   </header>
 
-  <!-- Main -->
   <main>
     <!-- Hero -->
     <section id="home" class="hero">
@@ -272,7 +271,7 @@
         </div>
 
         <div class="about">
-          <div class="about-card">
+          <div class="about-card card">
             <div class="about-media">
               <img
                 class="about-img zoomable"
@@ -331,6 +330,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -348,7 +348,7 @@
               <h3>Direct</h3>
               <p><strong>Email:</strong> <a href="mailto:support@shellkey.company">support@shellkey.company</a></p>
               <p><strong>Phone:</strong> <a href="tel:+13372548321">+1 (337) 254-8321</a></p>
-              <p class="muted">Business hours: Mon–Fri 8am-5pm </p>
+              <p class="muted">Business hours: Mon–Fri 8am–5pm</p>
             </div>
           </div>
 
@@ -373,9 +373,7 @@
                 </label>
 
                 <button class="btn btn-primary" type="submit">Send Email</button>
-                <p class="muted tiny">
-                  Opens your default mail app (Outlook/Gmail/Yahoo—whatever is connected). No account required on this website.
-                </p>
+                <p class="muted tiny">Opens your default mail app. No login required on this site.</p>
               </form>
             </div>
           </div>
@@ -385,7 +383,6 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="muted">© 2025 Shell Key. All rights reserved.</div>
@@ -407,6 +404,7 @@
   </div>
 
   <script>
+    // Mobile Nav
     const navToggle = document.getElementById("navToggle");
     const navLinks = document.getElementById("navLinks");
 
@@ -431,6 +429,7 @@
       if (!withinNav) closeMenu();
     });
 
+    // Contact Form -> mailto
     document.getElementById("contactForm").addEventListener("submit", (e) => {
       e.preventDefault();
 
@@ -458,14 +457,18 @@
       window.location.href = url;
     });
 
+    // Fullscreen Image Viewer
     const viewer = document.getElementById("viewer");
     const viewerImg = document.getElementById("viewerImg");
     const viewerBackdrop = document.getElementById("viewerBackdrop");
     const viewerClose = document.getElementById("viewerClose");
     const viewerOpenNew = document.getElementById("viewerOpenNew");
     const viewerReset = document.getElementById("viewerReset");
+    const stage = document.getElementById("viewerStage");
 
-    let scale = 1, translateX = 0, translateY = 0;
+    let scale = 1;
+    let translateX = 0;
+    let translateY = 0;
 
     function applyTransform() {
       viewerImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
@@ -502,6 +505,75 @@
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && viewer.classList.contains("open")) closeViewer();
     });
+
+    let isDragging = false;
+    let startX = 0, startY = 0;
+    let pinchStartDist = 0;
+    let pinchStartScale = 1;
+
+    function dist(t1, t2) {
+      const dx = t1.clientX - t2.clientX;
+      const dy = t1.clientY - t2.clientY;
+      return Math.hypot(dx, dy);
+    }
+
+    stage.addEventListener("touchstart", (e) => {
+      if (!viewer.classList.contains("open")) return;
+
+      if (e.touches.length === 2) {
+        pinchStartDist = dist(e.touches[0], e.touches[1]);
+        pinchStartScale = scale;
+      } else if (e.touches.length === 1) {
+        isDragging = true;
+        startX = e.touches[0].clientX - translateX;
+        startY = e.touches[0].clientY - translateY;
+      }
+    }, { passive: true });
+
+    stage.addEventListener("touchmove", (e) => {
+      if (!viewer.classList.contains("open")) return;
+
+      if (e.touches.length === 2) {
+        const d = dist(e.touches[0], e.touches[1]);
+        const factor = d / pinchStartDist;
+        scale = Math.min(6, Math.max(1, pinchStartScale * factor));
+        applyTransform();
+      } else if (e.touches.length === 1 && isDragging) {
+        translateX = e.touches[0].clientX - startX;
+        translateY = e.touches[0].clientY - startY;
+        applyTransform();
+      }
+    }, { passive: true });
+
+    stage.addEventListener("touchend", () => {
+      isDragging = false;
+      pinchStartDist = 0;
+    });
+
+    stage.addEventListener("mousedown", (e) => {
+      if (!viewer.classList.contains("open")) return;
+      isDragging = true;
+      startX = e.clientX - translateX;
+      startY = e.clientY - translateY;
+    });
+
+    window.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+      translateX = e.clientX - startX;
+      translateY = e.clientY - startY;
+      applyTransform();
+    });
+
+    window.addEventListener("mouseup", () => { isDragging = false; });
+
+    stage.addEventListener("wheel", (e) => {
+      if (!viewer.classList.contains("open")) return;
+      e.preventDefault();
+      const delta = Math.sign(e.deltaY);
+      const next = scale + (delta < 0 ? 0.15 : -0.15);
+      scale = Math.min(6, Math.max(1, next));
+      applyTransform();
+    }, { passive: false });
   </script>
 </body>
 </html>
