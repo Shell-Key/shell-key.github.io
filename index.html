@@ -8,20 +8,19 @@
 </head>
 
 <body>
-  <!-- Header / Nav -->
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#home" aria-label="Shell Key Home">
+      <a class="brand" href="#home">
         <img
           class="brand-logo"
-          src="assets/img/logo/ShellKeyWhiteTrace.png"
+          src="assets/logo/ShellKeyWhiteTrace.png"
           alt="Shell Key"
-          loading="eager"
         />
       </a>
 
       <nav class="nav">
-        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <button class="nav-toggle" id="navToggle">
           <span></span><span></span><span></span>
         </button>
 
@@ -36,31 +35,26 @@
     </div>
   </header>
 
-  <!-- Main -->
   <main>
-    <!-- Hero -->
+    <!-- HERO -->
     <section id="home" class="hero">
       <div class="container hero-inner">
         <div class="hero-card">
-          <!-- Use the clean image (no extra overlaid text from the page) -->
           <div class="hero-media">
             <img
               class="hero-img zoomable"
-              src="assets/img/hero/Home.png"
-              alt="Shell Key hero"
-              loading="eager"
-              data-full="assets/img/hero/Home.png"
+              src="assets/hero/Home.png"
+              data-full="assets/hero/Home.png"
+              alt="Shell Key Hero"
             />
           </div>
 
-          <!-- Banner text below image -->
           <div class="hero-banner">
             <h1>Digital Project Controls</h1>
             <p>
-              Real-time dashboards, mobile applications, and project intelligence built for industrial execution,
-              turnarounds, and leadership visibility.
+              Real-time dashboards, mobile applications, and project intelligence
+              built for industrial execution, turnarounds, and leadership visibility.
             </p>
-
             <div class="hero-cta">
               <a class="btn btn-primary" href="#contact">Request a Demo</a>
               <a class="btn btn-ghost" href="#dashboards">View Examples</a>
@@ -70,537 +64,154 @@
       </div>
     </section>
 
-    <!-- Dashboards -->
+    <!-- DASHBOARDS -->
     <section id="dashboards" class="section">
       <div class="container">
         <div class="section-head">
           <h2>Dashboards</h2>
-          <p>Executive-ready views of progress, cost, productivity, and readiness — built for decisions.</p>
+          <p>Executive-ready views of progress, cost, productivity, and readiness.</p>
         </div>
 
         <div class="grid">
-          <!-- Use PM images (from /assets/img/hero) with better descriptions -->
           <article class="card">
             <div class="card-media">
-              <img class="zoomable"
-                src="assets/img/hero/PM1.JPG"
-                alt="Project controls dashboard example"
-                data-full="assets/img/hero/PM1.JPG"
-                loading="lazy" />
+              <img class="zoomable" src="assets/hero/PM1.JPG" data-full="assets/hero/PM1.JPG" />
             </div>
             <div class="card-body">
               <h3>Executive Summary</h3>
-              <p>High-level KPIs, critical path signals, cost vs forecast, and decision-ready highlights.</p>
-              <ul class="bullets">
-                <li>Leadership visibility</li>
-                <li>Cost + schedule health</li>
-                <li>Instant drilldowns</li>
-              </ul>
+              <p>High-level KPIs and decision-ready highlights.</p>
             </div>
           </article>
 
           <article class="card">
             <div class="card-media">
-              <img class="zoomable"
-                src="assets/img/hero/PM2.JPG"
-                alt="Readiness and planning dashboard example"
-                data-full="assets/img/hero/PM2.JPG"
-                loading="lazy" />
+              <img class="zoomable" src="assets/hero/PM2.JPG" data-full="assets/hero/PM2.JPG" />
             </div>
             <div class="card-body">
               <h3>Readiness & Planning</h3>
-              <p>Workpack readiness, constraints, upcoming milestones, and action tracking in one view.</p>
-              <ul class="bullets">
-                <li>Constraint flags</li>
-                <li>Readiness scoring</li>
-                <li>Accountability</li>
-              </ul>
+              <p>Workpack readiness and constraint tracking.</p>
             </div>
           </article>
 
           <article class="card">
             <div class="card-media">
-              <img class="zoomable"
-                src="assets/img/hero/PM3.jpg"
-                alt="Wall chart and turnaround visibility example"
-                data-full="assets/img/hero/PM3.jpg"
-                loading="lazy" />
+              <img class="zoomable" src="assets/hero/PM3.jpg" data-full="assets/hero/PM3.jpg" />
             </div>
             <div class="card-body">
               <h3>Turnaround Wall Chart</h3>
-              <p>Big-picture plan and readiness tracking that stays aligned from planning through execution.</p>
-              <ul class="bullets">
-                <li>Milestones + gates</li>
-                <li>Workstreams</li>
-                <li>Live status</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-media">
-              <img class="zoomable"
-                src="assets/img/hero/PM4.JPG"
-                alt="Daily reporting and field visibility example"
-                data-full="assets/img/hero/PM4.JPG"
-                loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>Daily Field Reporting</h3>
-              <p>Daily progress, productivity, blockers, and site updates — structured for fast reporting.</p>
-              <ul class="bullets">
-                <li>Daily log views</li>
-                <li>Progress rollups</li>
-                <li>Issue tracking</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-media">
-              <img class="zoomable"
-                src="assets/img/hero/PM5.JPG"
-                alt="Workpacks and execution status example"
-                data-full="assets/img/hero/PM5.JPG"
-                loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>Workpack Control</h3>
-              <p>Track workpack status end-to-end: planned → released → executed → closed with proof.</p>
-              <ul class="bullets">
-                <li>Status workflow</li>
-                <li>Proof + attachments</li>
-                <li>Closeout readiness</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-media">
-              <img class="zoomable"
-                src="assets/img/hero/PM6.JPG"
-                alt="Materials, equipment, and constraints tracking example"
-                data-full="assets/img/hero/PM6.JPG"
-                loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>Constraints & Materials</h3>
-              <p>See what’s holding work back: materials, permits, access, engineering, inspections, and more.</p>
-              <ul class="bullets">
-                <li>Constraint lists</li>
-                <li>Priority ranking</li>
-                <li>Owner actions</li>
-              </ul>
+              <p>Big-picture execution visibility.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Applications -->
+    <!-- APPLICATIONS -->
     <section id="applications" class="section section-alt">
       <div class="container">
         <div class="section-head">
           <h2>Applications</h2>
-          <p>Mobile + desktop tools that keep teams aligned — built to reduce chaos and save time.</p>
+          <p>Mobile and desktop tools for field execution.</p>
         </div>
 
         <div class="grid">
           <article class="card">
             <div class="card-media">
-              <img class="zoomable"
-                src="assets/img/apps/SKAppHand.PNG"
-                alt="Mobile field app"
-                data-full="assets/img/apps/SKAppHand.PNG"
-                loading="lazy" />
+              <img class="zoomable" src="assets/apps/SKAppHand.PNG" data-full="assets/apps/SKAppHand.PNG" />
             </div>
             <div class="card-body">
               <h3>Mobile Field App</h3>
-              <p>Capture updates, photos, and status in the field — consistent, simple, and fast.</p>
-              <ul class="bullets">
-                <li>Daily inputs</li>
-                <li>Photo evidence</li>
-                <li>Structured reporting</li>
-              </ul>
+              <p>Fast field updates with proof.</p>
             </div>
           </article>
 
           <article class="card">
             <div class="card-media">
-              <img class="zoomable"
-                src="assets/img/apps/CodeProDesk.JPG"
-                alt="Desktop companion"
-                data-full="assets/img/apps/CodeProDesk.JPG"
-                loading="lazy" />
+              <img class="zoomable" src="assets/apps/CodeProDesk.JPG" data-full="assets/apps/CodeProDesk.JPG" />
             </div>
             <div class="card-body">
               <h3>Desktop Companion</h3>
-              <p>Work packages, reporting, and dashboards in one view — designed for execution teams.</p>
-              <ul class="bullets">
-                <li>Fast navigation</li>
-                <li>Reporting hub</li>
-                <li>Team visibility</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-media">
-              <img class="zoomable"
-                src="assets/img/apps/CodeProMobile.png"
-                alt="Quick actions on mobile"
-                data-full="assets/img/apps/CodeProMobile.png"
-                loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>Quick Actions</h3>
-              <p>Key actions in seconds: updates, lookups, quick checks, and workflow shortcuts.</p>
-              <ul class="bullets">
-                <li>Speed in the field</li>
-                <li>Less admin work</li>
-                <li>Consistent processes</li>
-              </ul>
+              <p>Execution dashboards and reporting hub.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- About -->
+    <!-- ABOUT -->
     <section id="about" class="section">
       <div class="container">
         <div class="section-head">
           <h2>About</h2>
-          <p>Built by industrial project controls — designed to be used in the real world.</p>
+          <p>Built by industrial project controls professionals.</p>
         </div>
 
-        <div class="about">
-          <div class="about-card">
-            <div class="about-media">
-              <img
-                class="about-img zoomable"
-                src="assets/img/people/profilePic.jpg"
-                alt="Profile photo"
-                data-full="assets/img/people/profilePic.jpg"
-                loading="lazy"
-              />
-            </div>
-            <div class="about-body">
-              <h3>Kirby C. Billiot</h3>
-              <p class="muted">Owner / Operations • Industrial Project Controls • Dashboards + Apps</p>
-
-              <p>
-                We build practical digital systems for industrial projects — combining planning, execution, reporting,
-                and leadership visibility into tools that teams actually use.
-              </p>
-
-              <div class="about-grid">
-                <div class="pill">Power BI</div>
-                <div class="pill">Primavera P6</div>
-                <div class="pill">Turnarounds</div>
-                <div class="pill">Progress + Productivity</div>
-                <div class="pill">Cost Tracking</div>
-                <div class="pill">Workpack Readiness</div>
-              </div>
-
-              <div class="about-points">
-                <div class="about-point">
-                  <span class="dot"></span>
-                  <div>
-                    <strong>Clarity for leadership</strong>
-                    <div class="muted">Executive-ready dashboards that answer “where are we, what’s next, what’s stuck?”</div>
-                  </div>
-                </div>
-                <div class="about-point">
-                  <span class="dot"></span>
-                  <div>
-                    <strong>Tools for the field</strong>
-                    <div class="muted">Mobile + Desktop workflows for updates, daily log, workpack status, and proof.</div>
-                  </div>
-                </div>
-                <div class="about-point">
-                  <span class="dot"></span>
-                  <div>
-                    <strong>Designed for industrial reality</strong>
-                    <div class="muted">Turnaround-ready reporting without spreadsheet chaos.</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="about-actions">
-                <a class="btn btn-primary" href="#contact">Contact Me</a>
-                <a class="btn btn-ghost" href="#dashboards">See Dashboard Examples</a>
-              </div>
-            </div>
+        <div class="about-card card">
+          <div class="about-media">
+            <img class="about-img zoomable"
+                 src="assets/people/profilePic.jpg"
+                 data-full="assets/people/profilePic.jpg" />
+          </div>
+          <div class="about-body">
+            <h3>Kirby C. Billiot</h3>
+            <p class="muted">Owner • Industrial Project Controls</p>
+            <p>
+              We build practical digital systems for real industrial execution —
+              dashboards, apps, and reporting teams actually use.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- CONTACT -->
     <section id="contact" class="section section-alt">
       <div class="container">
         <div class="section-head">
           <h2>Contact</h2>
-          <p>Request a demo or ask a question. We’ll respond fast.</p>
+          <p>Request a demo or ask a question.</p>
         </div>
 
-        <div class="contact-grid">
-          <div class="card contact-card">
+        <div class="grid">
+          <div class="card">
             <div class="card-body">
-              <h3>Direct</h3>
-              <p><strong>Email:</strong> <a href="mailto:support@shellkey.company">support@shellkey.company</a></p>
-              <p><strong>Phone:</strong> <a href="tel:+13372548321">+1 (337) 254-8321</a></p>
-              <p class="muted">Business hours: Mon–Fri 8am-5pm </p>
-            </div>
-          </div>
-
-          <div class="card contact-card">
-            <div class="card-body">
-              <h3>Quick Message</h3>
-
-              <!-- No server needed: opens whatever email app is connected -->
-              <form id="contactForm" class="form">
-                <label>
-                  <span>Name</span>
-                  <input id="qName" type="text" placeholder="Your name" autocomplete="name" />
-                </label>
-
-                <label>
-                  <span>Email (optional)</span>
-                  <input id="qEmail" type="email" placeholder="you@example.com" autocomplete="email" />
-                </label>
-
-                <label>
-                  <span>Message</span>
-                  <textarea id="qMsg" rows="5" placeholder="How can we help?"></textarea>
-                </label>
-
-                <button class="btn btn-primary" type="submit">Send Email</button>
-                <p class="muted tiny">
-                  Opens your default mail app (Outlook/Gmail/Yahoo—whatever is connected). No account required on this website.
-                </p>
-              </form>
+              <p><strong>Email:</strong> support@shellkey.company</p>
+              <p><strong>Phone:</strong> (337) 254-8321</p>
             </div>
           </div>
         </div>
-
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div class="muted">© 2025 Shell Key. All rights reserved.</div>
+      <div class="muted">© 2025 Shell Key</div>
     </div>
   </footer>
 
-  <!-- Fullscreen Image Viewer -->
-  <div class="viewer" id="viewer" aria-hidden="true">
-    <div class="viewer-backdrop" id="viewerBackdrop"></div>
-    <div class="viewer-ui">
-      <button class="viewer-btn" id="viewerClose" aria-label="Close image">✕</button>
-      <a class="viewer-btn" id="viewerOpenNew" href="#" target="_blank" rel="noopener" aria-label="Open image in new tab">↗</a>
-      <button class="viewer-btn" id="viewerReset" aria-label="Reset zoom">⟲</button>
-    </div>
-
-    <div class="viewer-stage" id="viewerStage">
-      <img id="viewerImg" alt="Expanded view" />
-    </div>
-  </div>
-
   <script>
-    // -------------------------
-    // Mobile Nav (hamburger)
-    // -------------------------
     const navToggle = document.getElementById("navToggle");
     const navLinks = document.getElementById("navLinks");
 
-    function closeMenu() {
-      navLinks.classList.remove("open");
-      navToggle.classList.remove("open");
-      navToggle.setAttribute("aria-expanded", "false");
-    }
-
     navToggle.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("open");
-      navToggle.classList.toggle("open", isOpen);
-      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navLinks.classList.toggle("open");
+      navToggle.classList.toggle("open");
     });
 
-    // Close menu when clicking a link (fixes "hamburger stays open")
-    document.querySelectorAll(".nav-link").forEach(a => {
-      a.addEventListener("click", () => closeMenu());
-    });
-
-    // Close menu on outside click (mobile)
-    document.addEventListener("click", (e) => {
-      const withinNav = e.target.closest(".nav");
-      if (!withinNav) closeMenu();
-    });
-
-    // -------------------------
-    // Contact "Quick Message"
-    // -------------------------
-    document.getElementById("contactForm").addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      const name = document.getElementById("qName").value.trim();
-      const email = document.getElementById("qEmail").value.trim();
-      const msg = document.getElementById("qMsg").value.trim();
-
-      const subject = "Shell Key Website Inquiry";
-      const bodyLines = [
-        "Hi Shell Key,",
-        "",
-        "I'd like to request a demo / ask a question:",
-        "",
-        `Name: ${name || "(not provided)"}`,
-        `Email: ${email || "(not provided)"}`,
-        "",
-        "Message:",
-        msg || "(no message entered)",
-        "",
-        "— Sent from shellkey.company"
-      ];
-
-      const body = encodeURIComponent(bodyLines.join("\n"));
-      const url = `mailto:support@shellkey.company?subject=${encodeURIComponent(subject)}&body=${body}`;
-      window.location.href = url;
-    });
-
-    // -------------------------
-    // Fullscreen Image Viewer
-    // Pinch-to-zoom + drag (mobile)
-    // -------------------------
-    const viewer = document.getElementById("viewer");
-    const viewerImg = document.getElementById("viewerImg");
-    const viewerBackdrop = document.getElementById("viewerBackdrop");
-    const viewerClose = document.getElementById("viewerClose");
-    const viewerOpenNew = document.getElementById("viewerOpenNew");
-    const viewerReset = document.getElementById("viewerReset");
-    const stage = document.getElementById("viewerStage");
-
-    let scale = 1;
-    let translateX = 0;
-    let translateY = 0;
-
-    function applyTransform() {
-      viewerImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
-    }
-
-    function resetTransform() {
-      scale = 1;
-      translateX = 0;
-      translateY = 0;
-      applyTransform();
-    }
-
-    function openViewer(src) {
-      viewerImg.src = src;
-      viewerOpenNew.href = src;
-      resetTransform();
-      viewer.classList.add("open");
-      viewer.setAttribute("aria-hidden", "false");
-      document.body.classList.add("no-scroll");
-    }
-
-    function closeViewer() {
-      viewer.classList.remove("open");
-      viewer.setAttribute("aria-hidden", "true");
-      document.body.classList.remove("no-scroll");
-      viewerImg.src = "";
-    }
+    const viewer = document.createElement("div");
+    viewer.className = "viewer";
+    viewer.innerHTML = '<div class="viewer-backdrop"></div><img id="viewerImg">';
+    document.body.appendChild(viewer);
 
     document.querySelectorAll(".zoomable").forEach(img => {
       img.addEventListener("click", () => {
-        const full = img.getAttribute("data-full") || img.src;
-        openViewer(full);
+        viewer.classList.add("open");
+        viewer.querySelector("#viewerImg").src = img.dataset.full;
       });
     });
 
-    viewerBackdrop.addEventListener("click", closeViewer);
-    viewerClose.addEventListener("click", closeViewer);
-    viewerReset.addEventListener("click", resetTransform);
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && viewer.classList.contains("open")) closeViewer();
-    });
-
-    // Pinch zoom + drag (touch + mouse)
-    let isDragging = false;
-    let startX = 0, startY = 0;
-
-    // Touch pinch
-    let pinchStartDist = 0;
-    let pinchStartScale = 1;
-
-    function dist(t1, t2) {
-      const dx = t1.clientX - t2.clientX;
-      const dy = t1.clientY - t2.clientY;
-      return Math.hypot(dx, dy);
-    }
-
-    stage.addEventListener("touchstart", (e) => {
-      if (!viewer.classList.contains("open")) return;
-
-      if (e.touches.length === 2) {
-        pinchStartDist = dist(e.touches[0], e.touches[1]);
-        pinchStartScale = scale;
-      } else if (e.touches.length === 1) {
-        isDragging = true;
-        startX = e.touches[0].clientX - translateX;
-        startY = e.touches[0].clientY - translateY;
-      }
-    }, { passive: true });
-
-    stage.addEventListener("touchmove", (e) => {
-      if (!viewer.classList.contains("open")) return;
-
-      if (e.touches.length === 2) {
-        // Pinch zoom
-        const d = dist(e.touches[0], e.touches[1]);
-        const factor = d / pinchStartDist;
-        scale = Math.min(6, Math.max(1, pinchStartScale * factor));
-        applyTransform();
-      } else if (e.touches.length === 1 && isDragging) {
-        translateX = e.touches[0].clientX - startX;
-        translateY = e.touches[0].clientY - startY;
-        applyTransform();
-      }
-    }, { passive: true });
-
-    stage.addEventListener("touchend", () => {
-      isDragging = false;
-      pinchStartDist = 0;
-    });
-
-    // Mouse drag + wheel zoom (desktop)
-    stage.addEventListener("mousedown", (e) => {
-      if (!viewer.classList.contains("open")) return;
-      isDragging = true;
-      startX = e.clientX - translateX;
-      startY = e.clientY - translateY;
-    });
-
-    window.addEventListener("mousemove", (e) => {
-      if (!isDragging) return;
-      translateX = e.clientX - startX;
-      translateY = e.clientY - startY;
-      applyTransform();
-    });
-
-    window.addEventListener("mouseup", () => { isDragging = false; });
-
-    stage.addEventListener("wheel", (e) => {
-      if (!viewer.classList.contains("open")) return;
-      e.preventDefault();
-      const delta = Math.sign(e.deltaY);
-      const next = scale + (delta < 0 ? 0.15 : -0.15);
-      scale = Math.min(6, Math.max(1, next));
-      applyTransform();
-    }, { passive: false });
+    viewer.addEventListener("click", () => viewer.classList.remove("open"));
   </script>
 </body>
 </html>
