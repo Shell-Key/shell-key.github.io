@@ -1,7 +1,6 @@
 :root{
   --bg0:#050a16;
   --bg1:#07142a;
-  --bg2:#0a1d3a;
   --cardTop:rgba(255,255,255,0.06);
   --cardMid:rgba(255,255,255,0.03);
   --cardBot:rgba(0,0,0,0.20);
@@ -11,7 +10,9 @@
   --accent:#7CFF00; /* neon green */
   --shadow:0 18px 50px rgba(0,0,0,0.35);
   --radius:18px;
-  --max:1400px;
+
+  /* IMPORTANT: put this back (do NOT set to 1400) */
+  --max:1180px;
 }
 
 *{box-sizing:border-box}
@@ -101,9 +102,7 @@ body{
   padding:10px 10px;
   border-radius:10px;
 }
-.nav-link:hover{
-  background: rgba(255,255,255,0.06);
-}
+.nav-link:hover{background: rgba(255,255,255,0.06)}
 
 /* Hero */
 .hero{padding:24px 0 10px}
@@ -116,7 +115,7 @@ body{
   overflow:hidden;
 }
 
-/* HERO MEDIA: image should be fully visible and responsive */
+/* HERO MEDIA */
 .hero-media{
   display:flex;
   align-items:center;
@@ -128,7 +127,7 @@ body{
   display:block;
   width:100%;
   height:auto;
-  -height: clamp(260px, 55vh, 520px);
+  max-height: clamp(260px, 55vh, 520px);
   object-fit: contain;
   border-radius: 16px;
   box-shadow: 0 14px 40px rgba(0,0,0,0.25);
@@ -149,7 +148,7 @@ body{
 }
 .hero-banner p{
   margin:0 auto 16px;
-  -width: 820px;
+  max-width: 820px;
   color: rgba(234,242,255,0.82);
   line-height:1.5;
   font-size: clamp(14px, 1.5vw, 16px);
@@ -206,7 +205,7 @@ body{
 }
 .section-head p{
   margin:0 auto;
-  -width: 820px;
+  max-width: 820px;
   color: rgba(234,242,255,0.78);
   line-height:1.5;
 }
@@ -214,11 +213,11 @@ body{
 /* Grid */
 .grid{
   display:grid;
-  grid-template-columns: repeat(3, min(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap:18px;
 }
 
-/* Cards: brighter top + darker bottom */
+/* Cards */
 .card{
   border-radius: var(--radius);
   border:1px solid var(--stroke);
@@ -227,7 +226,7 @@ body{
   overflow:hidden;
 }
 
-/* Card media: image centered with padding, never cropped */
+/* Card media */
 .card-media{
   display:flex;
   align-items:center;
@@ -239,15 +238,14 @@ body{
 }
 .card-media img{
   display:block;
-  width: 100%;
+  width:100%;
   height:auto;
-  -height: 240px;
-  object-fit: contain; /* KEY: no cut-off */
+  max-height: 240px;
+  object-fit: cover; /* looks best on wide screens */
   border-radius: 14px;
   box-shadow: 0 12px 28px rgba(0,0,0,0.25);
 }
 
-/* Card body stays darker */
 .card-body{
   padding:18px 18px 20px;
   background: rgba(0,0,0,0.14);
@@ -284,7 +282,7 @@ body{
 .about-img{
   width:100%;
   height:auto;
-  -height: 360px;
+  max-height: 360px;
   object-fit: contain;
   border-radius: 16px;
   box-shadow: 0 18px 40px rgba(0,0,0,0.25);
@@ -325,10 +323,7 @@ body{
   gap:18px;
 }
 .contact-card .card-body p{margin:10px 0}
-.form{
-  display:grid;
-  gap:12px;
-}
+.form{display:grid; gap:12px}
 label span{
   display:block;
   font-size:12px;
@@ -405,11 +400,11 @@ input:focus, textarea:focus{
   align-items:center;
   justify-content:center;
   z-index:2;
-  touch-action: none; /* needed so pinch drag works smoothly */
+  touch-action: none;
 }
 #viewerImg{
-  -width: 94vw;
-  -height: 88vh;
+  max-width: 94vw;
+  max-height: 88vh;
   border-radius: 16px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.55);
   transform: translate(0px,0px) scale(1);
@@ -417,19 +412,17 @@ input:focus, textarea:focus{
   user-select:none;
   -webkit-user-drag:none;
 }
-
-/* Clickable images */
 .zoomable{cursor: zoom-in}
 
 /* Responsive */
-@media (-width: 1020px){
-  .grid{grid-template-columns: repeat(2, min(0, 1fr))}
+@media (max-width: 1020px){
+  .grid{grid-template-columns: repeat(2, minmax(0, 1fr))}
   .about-card{grid-template-columns: 1fr}
   .about-media{border-right:none; border-bottom: 1px solid rgba(255,255,255,0.07)}
   .contact-grid{grid-template-columns: 1fr}
 }
 
-@media (-width: 760px){
+@media (max-width: 760px){
   .nav-toggle{display:inline-flex}
   .nav-links{
     position:absolute;
