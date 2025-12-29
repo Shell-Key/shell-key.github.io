@@ -1,6 +1,7 @@
 :root{
   --bg0:#050a16;
   --bg1:#07142a;
+  --bg2:#0a1d3a;
   --cardTop:rgba(255,255,255,0.06);
   --cardMid:rgba(255,255,255,0.03);
   --cardBot:rgba(0,0,0,0.20);
@@ -10,9 +11,7 @@
   --accent:#7CFF00; /* neon green */
   --shadow:0 18px 50px rgba(0,0,0,0.35);
   --radius:18px;
-
-  /* IMPORTANT: put this back (do NOT set to 1400) */
-  --max:1180px;
+  --max:1180px; /* desktop width */
 }
 
 *{box-sizing:border-box}
@@ -115,7 +114,7 @@ body{
   overflow:hidden;
 }
 
-/* HERO MEDIA */
+/* Hero Media */
 .hero-media{
   display:flex;
   align-items:center;
@@ -210,7 +209,8 @@ body{
   line-height:1.5;
 }
 
-/* Grid */
+/* ✅ GRID RULES (THIS IS THE MAIN FIX) */
+/* Desktop: 3 columns */
 .grid{
   display:grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -238,14 +238,15 @@ body{
 }
 .card-media img{
   display:block;
-  width:100%;
+  width: 100%;
   height:auto;
   max-height: 240px;
-  object-fit: cover; /* looks best on wide screens */
+  object-fit: cover;
   border-radius: 14px;
   box-shadow: 0 12px 28px rgba(0,0,0,0.25);
 }
 
+/* Card body */
 .card-body{
   padding:18px 18px 20px;
   background: rgba(0,0,0,0.14);
@@ -323,7 +324,10 @@ body{
   gap:18px;
 }
 .contact-card .card-body p{margin:10px 0}
-.form{display:grid; gap:12px}
+.form{
+  display:grid;
+  gap:12px;
+}
 label span{
   display:block;
   font-size:12px;
@@ -414,14 +418,22 @@ input:focus, textarea:focus{
 }
 .zoomable{cursor: zoom-in}
 
-/* Responsive */
+/* =========================
+   RESPONSIVE BREAKPOINTS
+   ========================= */
+
+/* ✅ iPad/tablet: 2 columns */
 @media (max-width: 1020px){
   .grid{grid-template-columns: repeat(2, minmax(0, 1fr))}
   .about-card{grid-template-columns: 1fr}
-  .about-media{border-right:none; border-bottom: 1px solid rgba(255,255,255,0.07)}
+  .about-media{
+    border-right:none;
+    border-bottom: 1px solid rgba(255,255,255,0.07)
+  }
   .contact-grid{grid-template-columns: 1fr}
 }
 
+/* ✅ Mobile: stack EVERYTHING (1 column) */
 @media (max-width: 760px){
   .nav-toggle{display:inline-flex}
   .nav-links{
@@ -440,13 +452,20 @@ input:focus, textarea:focus{
   }
   .nav-links.open{display:flex}
   .nav-link{padding:12px 12px}
-  .card-media{min-height: 190px}
-  .card-media img{max-height: 220px}
+
+  /* ✅ this forces every section card row to be stacked */
+  .grid{grid-template-columns: 1fr !important}
+
+  /* make images fit nice on mobile */
+  .card-media{min-height: 160px}
+  .card-media img{max-height: 260px}
 }
 
+/* Extra small phones */
 @media (max-width: 520px){
   .container{width: min(100% - 24px, var(--max))}
   .hero-media{padding:12px}
   .hero-img{max-height: 420px}
   .card-media{padding:12px}
+  .card-media img{max-height: 240px}
 }
