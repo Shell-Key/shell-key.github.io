@@ -28,8 +28,7 @@
         <ul class="nav-links" id="navLinks">
           <li><a class="nav-link" href="#home">Home</a></li>
 
-          <!-- CHANGED: Dashboards now goes to dashboards.html -->
-          <li><a class="nav-link" href="dashboards.html">Dashboards</a></li>
+          <!-- REMOVED: Dashboards nav link -->
 
           <li><a class="nav-link" href="#applications">Applications</a></li>
           <li><a class="nav-link" href="#about">About</a></li>
@@ -63,16 +62,15 @@
 
             <div class="hero-cta">
               <a class="btn btn-primary" href="#contact">Request a Demo</a>
-
-              <!-- CHANGED: View Examples now goes to dashboards.html -->
-              <a class="btn btn-ghost" href="dashboards.html">View Examples</a>
+              <!-- Keep this going to the dashboard section on the same page -->
+              <a class="btn btn-ghost" href="#dashboards">View Examples</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Dashboards (kept exactly as-is on your home page) -->
+    <!-- Dashboards -->
     <section id="dashboards" class="section">
       <div class="container">
         <div class="section-head">
@@ -86,8 +84,11 @@
               <img class="zoomable" src="assets/hero/PM1.JPG" alt="Project controls dashboard example" data-full="assets/hero/PM1.JPG" loading="lazy" />
             </div>
             <div class="card-body">
-              <h3>Executive Summary</h3>
-              <p>High-level KPIs, critical path signals, cost vs forecast, and decision-ready highlights.</p>
+              <!-- TITLE + TEXT now links to dashboards.html section -->
+              <a href="dashboards.html#executive" style="text-decoration:none; color:inherit;">
+                <h3>Executive Summary</h3>
+                <p>High-level KPIs, critical path signals, cost vs forecast, and decision-ready highlights.</p>
+              </a>
               <ul class="bullets">
                 <li>Leadership visibility</li>
                 <li>Cost + schedule health</li>
@@ -101,8 +102,10 @@
               <img class="zoomable" src="assets/hero/PM2.JPG" alt="Readiness and planning dashboard example" data-full="assets/hero/PM2.JPG" loading="lazy" />
             </div>
             <div class="card-body">
-              <h3>Readiness & Planning</h3>
-              <p>Workpack readiness, constraints, upcoming milestones, and action tracking in one view.</p>
+              <a href="dashboards.html#readiness" style="text-decoration:none; color:inherit;">
+                <h3>Readiness & Planning</h3>
+                <p>Workpack readiness, constraints, upcoming milestones, and action tracking in one view.</p>
+              </a>
               <ul class="bullets">
                 <li>Constraint flags</li>
                 <li>Readiness scoring</li>
@@ -116,8 +119,10 @@
               <img class="zoomable" src="assets/hero/PM3.jpg" alt="Wall chart and turnaround visibility example" data-full="assets/hero/PM3.jpg" loading="lazy" />
             </div>
             <div class="card-body">
-              <h3>Turnaround Wall Chart</h3>
-              <p>Big-picture plan and readiness tracking that stays aligned from planning through execution.</p>
+              <a href="dashboards.html#wallchart" style="text-decoration:none; color:inherit;">
+                <h3>Turnaround Wall Chart</h3>
+                <p>Big-picture plan and readiness tracking that stays aligned from planning through execution.</p>
+              </a>
               <ul class="bullets">
                 <li>Milestones + gates</li>
                 <li>Workstreams</li>
@@ -131,8 +136,10 @@
               <img class="zoomable" src="assets/hero/PM4.JPG" alt="Daily reporting and field visibility example" data-full="assets/hero/PM4.JPG" loading="lazy" />
             </div>
             <div class="card-body">
-              <h3>Daily Field Reporting</h3>
-              <p>Daily progress, productivity, blockers, and site updates — structured for fast reporting.</p>
+              <a href="dashboards.html#field" style="text-decoration:none; color:inherit;">
+                <h3>Daily Field Reporting</h3>
+                <p>Daily progress, productivity, blockers, and site updates — structured for fast reporting.</p>
+              </a>
               <ul class="bullets">
                 <li>Daily log views</li>
                 <li>Progress rollups</li>
@@ -146,8 +153,10 @@
               <img class="zoomable" src="assets/hero/PM5.JPG" alt="Workpacks and execution status example" data-full="assets/hero/PM5.JPG" loading="lazy" />
             </div>
             <div class="card-body">
-              <h3>Workpack Control</h3>
-              <p>Track workpack status end-to-end: planned → released → executed → closed with proof.</p>
+              <a href="dashboards.html#workpack" style="text-decoration:none; color:inherit;">
+                <h3>Workpack Control</h3>
+                <p>Track workpack status end-to-end: planned → released → executed → closed with proof.</p>
+              </a>
               <ul class="bullets">
                 <li>Status workflow</li>
                 <li>Proof + attachments</li>
@@ -161,8 +170,10 @@
               <img class="zoomable" src="assets/hero/PM6.JPG" alt="Materials, equipment, and constraints tracking example" data-full="assets/hero/PM6.JPG" loading="lazy" />
             </div>
             <div class="card-body">
-              <h3>Constraints & Materials</h3>
-              <p>See what’s holding work back: materials, permits, access, engineering, inspections, and more.</p>
+              <a href="dashboards.html#constraints" style="text-decoration:none; color:inherit;">
+                <h3>Constraints & Materials</h3>
+                <p>See what’s holding work back: materials, permits, access, engineering, inspections, and more.</p>
+              </a>
               <ul class="bullets">
                 <li>Constraint lists</li>
                 <li>Priority ranking</li>
@@ -261,37 +272,9 @@
               <div class="pill">Workpack Readiness</div>
             </div>
 
-            <div class="about-points">
-              <div class="about-point">
-                <span class="dot"></span>
-                <div>
-                  <strong>Clarity for leadership</strong>
-                  <div class="muted">Executive-ready dashboards that answer “where are we, what’s next, what’s stuck?”</div>
-                </div>
-              </div>
-
-              <div class="about-point">
-                <span class="dot"></span>
-                <div>
-                  <strong>Tools for the field</strong>
-                  <div class="muted">Mobile + Desktop workflows for updates, daily log, workpack status, and proof.</div>
-                </div>
-              </div>
-
-              <div class="about-point">
-                <span class="dot"></span>
-                <div>
-                  <strong>Designed for industrial reality</strong>
-                  <div class="muted">Turnaround-ready reporting without spreadsheet chaos.</div>
-                </div>
-              </div>
-            </div>
-
             <div class="about-actions">
               <a class="btn btn-primary" href="#contact">Contact Me</a>
-
-              <!-- CHANGED: dashboard examples now goes to dashboards.html -->
-              <a class="btn btn-ghost" href="dashboards.html">See Dashboard Examples</a>
+              <a class="btn btn-ghost" href="#dashboards">See Dashboard Examples</a>
             </div>
           </div>
         </div>
@@ -382,11 +365,7 @@
       navToggle.setAttribute("aria-expanded", String(isOpen));
     });
 
-    // Keep behavior the same (close menu on click)
-    document.querySelectorAll(".nav-link").forEach(a => {
-      a.addEventListener("click", () => closeMenu());
-    });
-
+    document.querySelectorAll(".nav-link").forEach(a => a.addEventListener("click", closeMenu));
     document.addEventListener("click", (e) => { if (!e.target.closest(".nav")) closeMenu(); });
 
     // Contact form -> mailto
