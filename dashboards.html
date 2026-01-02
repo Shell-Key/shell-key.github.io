@@ -5,62 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shell Key | Dashboards</title>
 
-  <!-- IMPORTANT: This must match your main site -->
+  <!-- MUST match your main site -->
   <link rel="stylesheet" href="assets/styles.css?v=3" />
 
-  <!-- Small page-only styling to make the index look clean (does NOT change your main website) -->
+  <!-- Small page-only helpers (keeps same style; only adds index chips) -->
   <style>
     html { scroll-behavior: smooth; }
-    .dash-index { margin-top: 10px; }
-    .dash-index-grid {
-      display: grid;
+
+    .jump-grid{
+      display:grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 12px;
       margin-top: 14px;
     }
-    .dash-link {
-      display: block;
-      text-decoration: none;
-      color: inherit;
+    .jump-card{
+      text-decoration:none;
+      color:inherit;
+      display:block;
     }
-    .dash-link .card { cursor: pointer; }
-    .dash-mini {
-      padding: 14px;
+    .jump-card .card{
+      cursor:pointer;
+      height:100%;
     }
-    .dash-mini h3 { margin: 0 0 6px; }
-    .dash-mini p { margin: 0; }
-    .dash-actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 14px;
+    .jump-title{
+      margin:0 0 6px;
+      font-size: 1.05rem;
     }
-    .back-top {
-      display: inline-block;
+    .jump-desc{
+      margin:0;
+    }
+    .detail-grid{
+      display:grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 16px;
+      align-items:start;
+    }
+    .detail-img{
+      border-radius: 18px;
+      overflow:hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    .detail-img img{
+      width:100%;
+      height:auto;
+      display:block;
+      cursor: zoom-in;
+    }
+    .backlink{
+      display:inline-block;
       margin-left: 10px;
-      font-size: 0.95em;
-      opacity: 0.9;
+      font-size: .95em;
+      opacity:.9;
+      text-decoration:none;
     }
+    .backlink:hover{ text-decoration:underline; }
+
     @media (max-width: 980px){
-      .dash-index-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .jump-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .detail-grid{ grid-template-columns: 1fr; }
     }
     @media (max-width: 620px){
-      .dash-index-grid { grid-template-columns: 1fr; }
+      .jump-grid{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
 <body>
-  <!-- Header / Nav (same look as main site) -->
+  <!-- Header / Nav (same as main site) -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html#home" aria-label="Shell Key Home">
-        <img
-          class="brand-logo"
-          src="assets/logo/ShellKeyWhiteTrace.png"
-          alt="Shell Key"
-          loading="eager"
-        />
+        <img class="brand-logo" src="assets/logo/ShellKeyWhiteTrace.png" alt="Shell Key" loading="eager" />
       </a>
 
       <nav class="nav">
@@ -80,206 +95,118 @@
   </header>
 
   <main>
-    <!-- Page top -->
+    <!-- Top -->
     <section id="top" class="section">
       <div class="container">
         <div class="section-head">
           <h2>Dashboards</h2>
-          <p>Select a dashboard type below to jump to more detail. Each section includes a clear call-to-action to contact us.</p>
+          <p>Executive-ready views of progress, cost, productivity, and readiness — built for decisions.</p>
         </div>
 
-        <!-- Dashboard Index (NOT in header) -->
-        <div class="dash-index">
-          <div class="card">
-            <div class="card-body">
-              <h3 style="margin-top:0;">Dashboard Index</h3>
-              <p class="muted">Click any dashboard title below to jump to its section.</p>
+        <!-- Dashboard Index (click title -> jump down) -->
+        <div class="card">
+          <div class="card-body">
+            <h3 style="margin-top:0;">Select a Dashboard</h3>
+            <p class="muted">Click any option below to jump to that dashboard section.</p>
 
-              <div class="dash-index-grid">
-                <a class="dash-link" href="#executive">
-                  <div class="card dash-mini">
-                    <h3>Executive Summary</h3>
-                    <p class="muted">KPIs, critical signals, cost vs forecast, drilldowns.</p>
+            <div class="jump-grid">
+              <a class="jump-card" href="#executive">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="jump-title">Executive Summary</h4>
+                    <p class="jump-desc muted">KPIs, critical signals, cost vs forecast, drilldowns.</p>
                   </div>
-                </a>
+                </div>
+              </a>
 
-                <a class="dash-link" href="#readiness">
-                  <div class="card dash-mini">
-                    <h3>Readiness & Planning</h3>
-                    <p class="muted">Readiness scoring, constraints, milestones, actions.</p>
+              <a class="jump-card" href="#readiness">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="jump-title">Readiness & Planning</h4>
+                    <p class="jump-desc muted">Readiness scoring, constraints, milestones, actions.</p>
                   </div>
-                </a>
+                </div>
+              </a>
 
-                <a class="dash-link" href="#wallchart">
-                  <div class="card dash-mini">
-                    <h3>Turnaround Wall Chart</h3>
-                    <p class="muted">Milestones + gates, workstreams, live status.</p>
+              <a class="jump-card" href="#wallchart">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="jump-title">Turnaround Wall Chart</h4>
+                    <p class="jump-desc muted">Milestones + gates, workstreams, live status.</p>
                   </div>
-                </a>
+                </div>
+              </a>
 
-                <a class="dash-link" href="#field">
-                  <div class="card dash-mini">
-                    <h3>Daily Field Reporting</h3>
-                    <p class="muted">Daily logs, productivity, blockers, issues.</p>
+              <a class="jump-card" href="#field">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="jump-title">Daily Field Reporting</h4>
+                    <p class="jump-desc muted">Daily logs, productivity, blockers, issues.</p>
                   </div>
-                </a>
+                </div>
+              </a>
 
-                <a class="dash-link" href="#workpack">
-                  <div class="card dash-mini">
-                    <h3>Workpack Control</h3>
-                    <p class="muted">Planned → released → executed → closed with proof.</p>
+              <a class="jump-card" href="#workpack">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="jump-title">Workpack Control</h4>
+                    <p class="jump-desc muted">Planned → released → executed → closed with proof.</p>
                   </div>
-                </a>
+                </div>
+              </a>
 
-                <a class="dash-link" href="#constraints">
-                  <div class="card dash-mini">
-                    <h3>Constraints & Materials</h3>
-                    <p class="muted">Materials, permits, access, engineering, inspections.</p>
+              <a class="jump-card" href="#constraints">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="jump-title">Constraints & Materials</h4>
+                    <p class="jump-desc muted">Materials, permits, access, engineering, inspections.</p>
                   </div>
-                </a>
-              </div>
+                </div>
+              </a>
+            </div>
 
-              <div class="dash-actions">
-                <a class="btn btn-primary" href="index.html#contact">Request a Demo</a>
-                <a class="btn btn-ghost" href="index.html#contact">Ask a Question</a>
-              </div>
-
+            <div class="about-actions" style="margin-top:14px;">
+              <a class="btn btn-primary" href="index.html#contact">Request a Demo</a>
+              <a class="btn btn-ghost" href="index.html#contact">Ask a Question</a>
             </div>
           </div>
-        </div>
-
-        <!-- Card gallery (same look as main site cards) -->
-        <div class="grid" style="margin-top:18px;">
-          <a class="dash-link" href="#executive">
-            <article class="card">
-              <div class="card-media">
-                <img class="zoomable" src="assets/hero/PM1.JPG" alt="Project controls dashboard example" data-full="assets/hero/PM1.JPG" loading="lazy" />
-              </div>
-              <div class="card-body">
-                <h3>Executive Summary</h3>
-                <p>High-level KPIs, critical path signals, cost vs forecast, and decision-ready highlights.</p>
-                <ul class="bullets">
-                  <li>Leadership visibility</li>
-                  <li>Cost + schedule health</li>
-                  <li>Instant drilldowns</li>
-                </ul>
-              </div>
-            </article>
-          </a>
-
-          <a class="dash-link" href="#readiness">
-            <article class="card">
-              <div class="card-media">
-                <img class="zoomable" src="assets/hero/PM2.JPG" alt="Readiness and planning dashboard example" data-full="assets/hero/PM2.JPG" loading="lazy" />
-              </div>
-              <div class="card-body">
-                <h3>Readiness & Planning</h3>
-                <p>Workpack readiness, constraints, upcoming milestones, and action tracking in one view.</p>
-                <ul class="bullets">
-                  <li>Constraint flags</li>
-                  <li>Readiness scoring</li>
-                  <li>Accountability</li>
-                </ul>
-              </div>
-            </article>
-          </a>
-
-          <a class="dash-link" href="#wallchart">
-            <article class="card">
-              <div class="card-media">
-                <img class="zoomable" src="assets/hero/PM3.jpg" alt="Wall chart and turnaround visibility example" data-full="assets/hero/PM3.jpg" loading="lazy" />
-              </div>
-              <div class="card-body">
-                <h3>Turnaround Wall Chart</h3>
-                <p>Big-picture plan and readiness tracking that stays aligned from planning through execution.</p>
-                <ul class="bullets">
-                  <li>Milestones + gates</li>
-                  <li>Workstreams</li>
-                  <li>Live status</li>
-                </ul>
-              </div>
-            </article>
-          </a>
-
-          <a class="dash-link" href="#field">
-            <article class="card">
-              <div class="card-media">
-                <img class="zoomable" src="assets/hero/PM4.JPG" alt="Daily reporting and field visibility example" data-full="assets/hero/PM4.JPG" loading="lazy" />
-              </div>
-              <div class="card-body">
-                <h3>Daily Field Reporting</h3>
-                <p>Daily progress, productivity, blockers, and site updates — structured for fast reporting.</p>
-                <ul class="bullets">
-                  <li>Daily log views</li>
-                  <li>Progress rollups</li>
-                  <li>Issue tracking</li>
-                </ul>
-              </div>
-            </article>
-          </a>
-
-          <a class="dash-link" href="#workpack">
-            <article class="card">
-              <div class="card-media">
-                <img class="zoomable" src="assets/hero/PM5.JPG" alt="Workpacks and execution status example" data-full="assets/hero/PM5.JPG" loading="lazy" />
-              </div>
-              <div class="card-body">
-                <h3>Workpack Control</h3>
-                <p>Track workpack status end-to-end: planned → released → executed → closed with proof.</p>
-                <ul class="bullets">
-                  <li>Status workflow</li>
-                  <li>Proof + attachments</li>
-                  <li>Closeout readiness</li>
-                </ul>
-              </div>
-            </article>
-          </a>
-
-          <a class="dash-link" href="#constraints">
-            <article class="card">
-              <div class="card-media">
-                <img class="zoomable" src="assets/hero/PM6.JPG" alt="Materials, equipment, and constraints tracking example" data-full="assets/hero/PM6.JPG" loading="lazy" />
-              </div>
-              <div class="card-body">
-                <h3>Constraints & Materials</h3>
-                <p>See what’s holding work back: materials, permits, access, engineering, inspections, and more.</p>
-                <ul class="bullets">
-                  <li>Constraint lists</li>
-                  <li>Priority ranking</li>
-                  <li>Owner actions</li>
-                </ul>
-              </div>
-            </article>
-          </a>
         </div>
 
       </div>
     </section>
 
-    <!-- Detail sections -->
+    <!-- DETAILS: each section matches site style -->
     <section id="executive" class="section section-alt">
       <div class="container">
         <div class="section-head">
-          <h2>Executive Summary Dashboard <a class="back-top muted" href="#top">Back to index ↑</a></h2>
-          <p>Decision-ready visibility for leadership — KPI rollups and drilldowns that drive action.</p>
+          <h2>Executive Summary Dashboard <a class="backlink muted" href="#top">Back to top ↑</a></h2>
+          <p>Built for leaders who need a fast, reliable view of what matters most — with drilldowns for action.</p>
         </div>
-        <div class="card">
-          <div class="card-body">
-            <h3>Best for</h3>
-            <ul class="bullets">
-              <li>Turnaround leadership, project managers, owners, directors</li>
-              <li>Fast “where are we / what’s stuck / what’s next” clarity</li>
-            </ul>
-            <h3 style="margin-top:14px;">What we deliver</h3>
-            <ul class="bullets">
-              <li>Executive KPI view + exception flags</li>
-              <li>Trends, drilldowns, and action-ready summaries</li>
-              <li>Data model + refresh setup (Excel/SharePoint/SQL as needed)</li>
-            </ul>
-            <div class="about-actions" style="margin-top:14px;">
-              <a class="btn btn-primary" href="index.html#contact">Request Info / Book a Call</a>
-              <a class="btn btn-ghost" href="#top">Back to Index</a>
+
+        <div class="detail-grid">
+          <div class="card">
+            <div class="card-body">
+              <h3>What it includes</h3>
+              <ul class="bullets">
+                <li>KPI cards, trends, highlights, exceptions, drilldowns</li>
+                <li>Cost + schedule health, progress, productivity</li>
+                <li>Action-focused summary for leadership</li>
+              </ul>
+
+              <h3 style="margin-top:14px;">Best for</h3>
+              <ul class="bullets">
+                <li>Turnaround leadership, project managers, owners, directors</li>
+              </ul>
+
+              <div class="about-actions" style="margin-top:14px;">
+                <a class="btn btn-primary" href="index.html#contact">Request Info / Book a Call</a>
+                <a class="btn btn-ghost" href="#top">Back to Top</a>
+              </div>
             </div>
+          </div>
+
+          <div class="detail-img">
+            <img class="zoomable" src="assets/hero/PM1.JPG" alt="Executive Summary example" data-full="assets/hero/PM1.JPG" loading="lazy" />
           </div>
         </div>
       </div>
@@ -288,26 +215,29 @@
     <section id="readiness" class="section">
       <div class="container">
         <div class="section-head">
-          <h2>Readiness & Planning Dashboard <a class="back-top muted" href="#top">Back to index ↑</a></h2>
-          <p>Workpack readiness, constraint flags, due dates, and accountability — so execution isn’t surprised.</p>
+          <h2>Readiness & Planning Dashboard <a class="backlink muted" href="#top">Back to top ↑</a></h2>
+          <p>Tracks workpack readiness, gating items, and upcoming milestones so teams don’t get surprised in execution.</p>
         </div>
-        <div class="card">
-          <div class="card-body">
-            <h3>Best for</h3>
-            <ul class="bullets">
-              <li>Planners, readiness leads, coordinators</li>
-              <li>Preventing execution delays caused by missing inputs</li>
-            </ul>
-            <h3 style="margin-top:14px;">What we deliver</h3>
-            <ul class="bullets">
-              <li>Readiness scoring by package/workstream</li>
-              <li>Constraint list with owners + due dates</li>
-              <li>Milestones and action tracking views</li>
-            </ul>
-            <div class="about-actions" style="margin-top:14px;">
-              <a class="btn btn-primary" href="index.html#contact">Request Info / Book a Call</a>
-              <a class="btn btn-ghost" href="#top">Back to Index</a>
+
+        <div class="detail-grid">
+          <div class="card">
+            <div class="card-body">
+              <h3>What it includes</h3>
+              <ul class="bullets">
+                <li>Readiness scoring, constraint flags, due dates, accountability</li>
+                <li>Upcoming milestone views and action tracking</li>
+                <li>Clear “ready / not ready” with reasons</li>
+              </ul>
+
+              <div class="about-actions" style="margin-top:14px;">
+                <a class="btn btn-primary" href="index.html#contact">Request Info / Book a Call</a>
+                <a class="btn btn-ghost" href="#top">Back to Top</a>
+              </div>
             </div>
+          </div>
+
+          <div class="detail-img">
+            <img class="zoomable" src="assets/hero/PM2.JPG" alt="Readiness & Planning example" data-full="assets/hero/PM2.JPG" loading="lazy" />
           </div>
         </div>
       </div>
@@ -316,21 +246,29 @@
     <section id="wallchart" class="section section-alt">
       <div class="container">
         <div class="section-head">
-          <h2>Turnaround Wall Chart Dashboard <a class="back-top muted" href="#top">Back to index ↑</a></h2>
-          <p>A “digital wall chart” that keeps milestones, gates, and execution status aligned.</p>
+          <h2>Turnaround Wall Chart Dashboard <a class="backlink muted" href="#top">Back to top ↑</a></h2>
+          <p>A “digital wall chart” view that keeps the full plan aligned from planning through execution.</p>
         </div>
-        <div class="card">
-          <div class="card-body">
-            <h3>What we deliver</h3>
-            <ul class="bullets">
-              <li>Milestone & gate tracking with live status</li>
-              <li>Workstream rollups for leadership visibility</li>
-              <li>Optional: risk ranking + readiness heat maps</li>
-            </ul>
-            <div class="about-actions" style="margin-top:14px;">
-              <a class="btn btn-primary" href="index.html#contact">Request Info / Book a Call</a>
-              <a class="btn btn-ghost" href="#top">Back to Index</a>
+
+        <div class="detail-grid">
+          <div class="card">
+            <div class="card-body">
+              <h3>What it includes</h3>
+              <ul class="bullets">
+                <li>Milestones, gates, workstreams, live status</li>
+                <li>Leadership view + readiness tracking</li>
+                <li>Optional: risk ranking + readiness heat maps</li>
+              </ul>
+
+              <div class="about-actions" style="margin-top:14px;">
+                <a class="btn btn-primary" href="index.html#contact">Request Info / Book a Call</a>
+                <a class="btn btn-ghost" href="#top">Back to Top</a>
+              </div>
             </div>
+          </div>
+
+          <div class="detail-img">
+            <img class="zoomable" src="assets/hero/PM3.jpg" alt="Turnaround Wall Chart example" data-full="assets/hero/PM3.jpg" loading="lazy" />
           </div>
         </div>
       </div>
@@ -339,21 +277,28 @@
     <section id="field" class="section">
       <div class="container">
         <div class="section-head">
-          <h2>Daily Field Reporting Dashboard <a class="back-top muted" href="#top">Back to index ↑</a></h2>
-          <p>Structured daily reporting: progress, productivity, blockers, and issue tracking.</p>
+          <h2>Daily Field Reporting Dashboard <a class="backlink muted" href="#top">Back to top ↑</a></h2>
+          <p>Turns daily updates into structured reporting for faster decisions and cleaner communication.</p>
         </div>
-        <div class="card">
-          <div class="card-body">
-            <h3>What we deliver</h3>
-            <ul class="bullets">
-              <li>Daily log rollups by area/workstream</li>
-              <li>Blockers + issue tracking with ownership</li>
-              <li>Optional: photos / proof links for field updates</li>
-            </ul>
-            <div class="about-actions" style="margin-top:14px;">
-              <a class="btn btn-primary" href="index.html#contact">Request Info / Book a Call</a>
-              <a class="btn btn-ghost" href="#top">Back to Index</a>
+
+        <div class="detail-grid">
+          <div class="card">
+            <div class="card-body">
+              <h3>What it includes</h3>
+              <ul class="bullets">
+                <li>Daily logs, productivity rollups, blockers, issues</li>
+                <li>Optional: photos + proof links</li>
+              </ul>
+
+              <div class="about-actions" style="margin-top:14px;">
+                <a class="btn btn-primary" href="index.html#contact">Request Info / Book a Call</a>
+                <a class="btn btn-ghost" href="#top">Back to Top</a>
+              </div>
             </div>
+          </div>
+
+          <div class="detail-img">
+            <img class="zoomable" src="assets/hero/PM4.JPG" alt="Daily Field Reporting example" data-full="assets/hero/PM4.JPG" loading="lazy" />
           </div>
         </div>
       </div>
@@ -362,21 +307,28 @@
     <section id="workpack" class="section section-alt">
       <div class="container">
         <div class="section-head">
-          <h2>Workpack Control Dashboard <a class="back-top muted" href="#top">Back to index ↑</a></h2>
-          <p>Track workpacks end-to-end with proof and closeout readiness visibility.</p>
+          <h2>Workpack Control Dashboard <a class="backlink muted" href="#top">Back to top ↑</a></h2>
+          <p>Track workpacks from planned → released → executed → closed, with proof and closeout readiness.</p>
         </div>
-        <div class="card">
-          <div class="card-body">
-            <h3>What we deliver</h3>
-            <ul class="bullets">
-              <li>Status workflow tracking and aging</li>
-              <li>Proof/attachments and closeout readiness views</li>
-              <li>Optional: SharePoint list + Power Apps input forms</li>
-            </ul>
-            <div class="about-actions" style="margin-top:14px;">
-              <a class="btn btn-primary" href="index.html#contact">Request Info / Book a Call</a>
-              <a class="btn btn-ghost" href="#top">Back to Index</a>
+
+        <div class="detail-grid">
+          <div class="card">
+            <div class="card-body">
+              <h3>What it includes</h3>
+              <ul class="bullets">
+                <li>Workflow status, proof tracking, closeout readiness</li>
+                <li>Works with: SharePoint lists, Excel logs, Power Apps, Adalo</li>
+              </ul>
+
+              <div class="about-actions" style="margin-top:14px;">
+                <a class="btn btn-primary" href="index.html#contact">Request Info / Book a Call</a>
+                <a class="btn btn-ghost" href="#top">Back to Top</a>
+              </div>
             </div>
+          </div>
+
+          <div class="detail-img">
+            <img class="zoomable" src="assets/hero/PM5.JPG" alt="Workpack Control example" data-full="assets/hero/PM5.JPG" loading="lazy" />
           </div>
         </div>
       </div>
@@ -385,31 +337,37 @@
     <section id="constraints" class="section">
       <div class="container">
         <div class="section-head">
-          <h2>Constraints & Materials Dashboard <a class="back-top muted" href="#top">Back to index ↑</a></h2>
-          <p>Identify what’s holding work back and drive actions before schedule impact.</p>
+          <h2>Constraints & Materials Dashboard <a class="backlink muted" href="#top">Back to top ↑</a></h2>
+          <p>Spot what’s holding work back and drive actions to remove constraints before they impact schedule.</p>
         </div>
-        <div class="card">
-          <div class="card-body">
-            <h3>What we deliver</h3>
-            <ul class="bullets">
-              <li>Constraint list by type/owner/due date</li>
-              <li>Priority ranking and aging to focus the team</li>
-              <li>Optional: root cause categories and action effectiveness</li>
-            </ul>
-            <div class="about-actions" style="margin-top:14px;">
-              <a class="btn btn-primary" href="index.html#contact">Request Info / Book a Call</a>
-              <a class="btn btn-ghost" href="#top">Back to Index</a>
+
+        <div class="detail-grid">
+          <div class="card">
+            <div class="card-body">
+              <h3>What it includes</h3>
+              <ul class="bullets">
+                <li>Constraint lists, priority ranking, owners, due dates</li>
+                <li>Optional: aging, root cause, action effectiveness</li>
+              </ul>
+
+              <div class="about-actions" style="margin-top:14px;">
+                <a class="btn btn-primary" href="index.html#contact">Request Info / Book a Call</a>
+                <a class="btn btn-ghost" href="#top">Back to Top</a>
+              </div>
             </div>
+          </div>
+
+          <div class="detail-img">
+            <img class="zoomable" src="assets/hero/PM6.JPG" alt="Constraints & Materials example" data-full="assets/hero/PM6.JPG" loading="lazy" />
           </div>
         </div>
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div class="muted">© 2025 Shell Key. All rights reserved.</div>
+      <div class="muted">© 2026 shellkey.company — Dashboards & Digital Project Controls</div>
     </div>
   </footer>
 
@@ -443,10 +401,7 @@
       navToggle.setAttribute("aria-expanded", String(isOpen));
     });
 
-    document.querySelectorAll(".nav-link").forEach(a => {
-      a.addEventListener("click", () => closeMenu());
-    });
-
+    document.querySelectorAll(".nav-link").forEach(a => a.addEventListener("click", () => closeMenu()));
     document.addEventListener("click", (e) => { if (!e.target.closest(".nav")) closeMenu(); });
 
     // Viewer
@@ -483,7 +438,6 @@
 
     document.querySelectorAll(".zoomable").forEach(img => {
       img.addEventListener("click", (e) => {
-        // If user clicks image, still allow zoom (don’t block the anchor jump)
         e.preventDefault();
         openViewer(img.getAttribute("data-full") || img.src);
       });
