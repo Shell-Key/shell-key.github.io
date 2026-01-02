@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shell Key | Dashboards</title>
+  <title>Shell Key | Power BI Dashboards for Industrial Project Controls</title>
 
-  <!-- MUST match your main site -->
+  <!-- Same CSS as main site -->
   <link rel="stylesheet" href="assets/styles.css?v=3" />
 
-  <!-- Small page-only helpers (keeps same style; only adds index chips) -->
+  <!-- Page-specific (minimal) helper styles -->
   <style>
     html { scroll-behavior: smooth; }
 
@@ -26,6 +26,11 @@
     .jump-card .card{
       cursor:pointer;
       height:100%;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .jump-card:hover .card{
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0,0,0,.35);
     }
     .jump-title{
       margin:0 0 6px;
@@ -34,6 +39,7 @@
     .jump-desc{
       margin:0;
     }
+
     .detail-grid{
       display:grid;
       grid-template-columns: 1.1fr 0.9fr;
@@ -44,6 +50,7 @@
       border-radius: 18px;
       overflow:hidden;
       box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      background: rgba(255,255,255,.03);
     }
     .detail-img img{
       width:100%;
@@ -51,27 +58,46 @@
       display:block;
       cursor: zoom-in;
     }
-    .backlink{
-      display:inline-block;
-      margin-left: 10px;
-      font-size: .95em;
-      opacity:.9;
-      text-decoration:none;
+
+    .seo-block h3{
+      margin: 14px 0 8px;
     }
-    .backlink:hover{ text-decoration:underline; }
+    .seo-kv{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .kv{
+      padding: 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.06);
+    }
+    .kv strong{
+      display:block;
+      margin-bottom: 6px;
+    }
+    .small-note{
+      margin-top: 10px;
+    }
 
     @media (max-width: 980px){
       .jump-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .detail-grid{ grid-template-columns: 1fr; }
+      .seo-kv{ grid-template-columns: 1fr; }
     }
     @media (max-width: 620px){
       .jump-grid{ grid-template-columns: 1fr; }
     }
   </style>
+
+  <!-- SEO meta -->
+  <meta name="description" content="Shell Key builds Power BI dashboards for industrial project controls, turnarounds, and leadership visibility. Explore Executive Summary, Readiness & Planning, Turnaround Wall Chart, Daily Field Reporting, Workpack Control, and Constraints & Materials dashboards." />
 </head>
 
 <body>
-  <!-- Header / Nav (same as main site) -->
+  <!-- Header / Nav -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html#home" aria-label="Shell Key Home">
@@ -85,7 +111,6 @@
 
         <ul class="nav-links" id="navLinks">
           <li><a class="nav-link" href="index.html#home">Home</a></li>
-          <li><a class="nav-link" href="dashboards.html">Dashboards</a></li>
           <li><a class="nav-link" href="index.html#applications">Applications</a></li>
           <li><a class="nav-link" href="index.html#about">About</a></li>
           <li><a class="nav-link" href="index.html#contact">Contact</a></li>
@@ -99,15 +124,17 @@
     <section id="top" class="section">
       <div class="container">
         <div class="section-head">
-          <h2>Dashboards</h2>
-          <p>Executive-ready views of progress, cost, productivity, and readiness — built for decisions.</p>
+          <h2>Power BI Dashboards</h2>
+          <p>Dashboard examples designed for industrial execution, turnarounds, and leadership decision-making.</p>
         </div>
 
-        <!-- Dashboard Index (click title -> jump down) -->
         <div class="card">
           <div class="card-body">
             <h3 style="margin-top:0;">Select a Dashboard</h3>
-            <p class="muted">Click any option below to jump to that dashboard section.</p>
+            <p class="muted">
+              Click a dashboard below to jump to details. Each section explains what it does, what data it needs,
+              and how it helps leadership and execution teams make faster decisions.
+            </p>
 
             <div class="jump-grid">
               <a class="jump-card" href="#executive">
@@ -169,33 +196,59 @@
               <a class="btn btn-primary" href="index.html#contact">Request a Demo</a>
               <a class="btn btn-ghost" href="index.html#contact">Ask a Question</a>
             </div>
+
+            <p class="muted small-note">
+              Tip: If you already have Excel logs, SharePoint lists, Power Apps, or field reporting data, we can connect it and start fast.
+              If you don’t, we can build a clean tracker that feeds the dashboard so you aren’t stuck in spreadsheet chaos.
+            </p>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- DETAILS: each section matches site style -->
+    <!-- EXECUTIVE -->
     <section id="executive" class="section section-alt">
       <div class="container">
         <div class="section-head">
-          <h2>Executive Summary Dashboard <a class="backlink muted" href="#top">Back to top ↑</a></h2>
-          <p>Built for leaders who need a fast, reliable view of what matters most — with drilldowns for action.</p>
+          <h2>Executive Summary Dashboard</h2>
+          <p>Fast, reliable leadership visibility — with drilldowns that turn questions into actions.</p>
         </div>
 
         <div class="detail-grid">
-          <div class="card">
+          <div class="card seo-block">
             <div class="card-body">
-              <h3>What it includes</h3>
+              <h3>What it does</h3>
+              <p>
+                This dashboard gives leadership a single view of where the job stands today — schedule health, cost outlook,
+                progress performance, and what’s blocking the next milestones. It’s designed to reduce “status meeting noise”
+                and focus the team on priorities.
+              </p>
+
+              <h3>Questions it answers</h3>
               <ul class="bullets">
-                <li>KPI cards, trends, highlights, exceptions, drilldowns</li>
-                <li>Cost + schedule health, progress, productivity</li>
-                <li>Action-focused summary for leadership</li>
+                <li>Are we ahead or behind plan — and why?</li>
+                <li>Is cost trending to the forecast (or overrun)?</li>
+                <li>What are the top drivers impacting schedule and productivity?</li>
+                <li>What needs an owner today?</li>
               </ul>
 
-              <h3 style="margin-top:14px;">Best for</h3>
+              <div class="seo-kv">
+                <div class="kv">
+                  <strong>Best for</strong>
+                  Turnaround leadership, project managers, owners, directors, planners
+                </div>
+                <div class="kv">
+                  <strong>Typical inputs</strong>
+                  Schedule (P6/export), cost summary, progress quantities, constraints/issues, workforce hours
+                </div>
+              </div>
+
+              <h3>What you get (deliverables)</h3>
               <ul class="bullets">
-                <li>Turnaround leadership, project managers, owners, directors</li>
+                <li>Executive KPI panel + trends</li>
+                <li>Drilldowns by area/system/workstream</li>
+                <li>Top issues/constraints list with owners</li>
+                <li>Weekly/PDF snapshot option (if desired)</li>
               </ul>
 
               <div class="about-actions" style="margin-top:14px;">
@@ -206,27 +259,54 @@
           </div>
 
           <div class="detail-img">
-            <img class="zoomable" src="assets/hero/PM1.JPG" alt="Executive Summary example" data-full="assets/hero/PM1.JPG" loading="lazy" />
+            <img class="zoomable" src="assets/hero/PM1.JPG" alt="Executive Summary Power BI dashboard example" data-full="assets/hero/PM1.JPG" loading="lazy" />
           </div>
         </div>
       </div>
     </section>
 
+    <!-- READINESS -->
     <section id="readiness" class="section">
       <div class="container">
         <div class="section-head">
-          <h2>Readiness & Planning Dashboard <a class="backlink muted" href="#top">Back to top ↑</a></h2>
-          <p>Tracks workpack readiness, gating items, and upcoming milestones so teams don’t get surprised in execution.</p>
+          <h2>Readiness & Planning Dashboard</h2>
+          <p>Readiness scoring, gating items, and upcoming milestones so teams don’t get surprised in execution.</p>
         </div>
 
         <div class="detail-grid">
-          <div class="card">
+          <div class="card seo-block">
             <div class="card-body">
-              <h3>What it includes</h3>
+              <h3>What it does</h3>
+              <p>
+                This dashboard shows whether work is actually ready to execute — not just “scheduled.”
+                It tracks constraints (materials, permits, access, engineering, inspection hold points), highlights upcoming
+                risk areas, and supports clean handoffs from planning to execution.
+              </p>
+
+              <h3>Questions it answers</h3>
               <ul class="bullets">
-                <li>Readiness scoring, constraint flags, due dates, accountability</li>
-                <li>Upcoming milestone views and action tracking</li>
-                <li>Clear “ready / not ready” with reasons</li>
+                <li>What is ready to release next week — and what is blocked?</li>
+                <li>Which constraints are trending up and need escalation?</li>
+                <li>Which workstreams are missing critical inputs?</li>
+                <li>What’s the readiness score by area/system?</li>
+              </ul>
+
+              <div class="seo-kv">
+                <div class="kv">
+                  <strong>Best for</strong>
+                  Planners, readiness leads, coordinators, execution leadership
+                </div>
+                <div class="kv">
+                  <strong>Typical inputs</strong>
+                  Workpack list, constraint log, milestone dates, responsible owners, due dates
+                </div>
+              </div>
+
+              <h3>Common add-ons</h3>
+              <ul class="bullets">
+                <li>Readiness “gates” with pass/fail criteria</li>
+                <li>Automatic overdue alerts by owner</li>
+                <li>Weekly readiness report outputs</li>
               </ul>
 
               <div class="about-actions" style="margin-top:14px;">
@@ -237,27 +317,53 @@
           </div>
 
           <div class="detail-img">
-            <img class="zoomable" src="assets/hero/PM2.JPG" alt="Readiness & Planning example" data-full="assets/hero/PM2.JPG" loading="lazy" />
+            <img class="zoomable" src="assets/hero/PM2.JPG" alt="Readiness and planning Power BI dashboard example" data-full="assets/hero/PM2.JPG" loading="lazy" />
           </div>
         </div>
       </div>
     </section>
 
+    <!-- WALL CHART -->
     <section id="wallchart" class="section section-alt">
       <div class="container">
         <div class="section-head">
-          <h2>Turnaround Wall Chart Dashboard <a class="backlink muted" href="#top">Back to top ↑</a></h2>
-          <p>A “digital wall chart” view that keeps the full plan aligned from planning through execution.</p>
+          <h2>Turnaround Wall Chart Dashboard</h2>
+          <p>A “digital wall chart” that keeps the full plan aligned from planning through execution.</p>
         </div>
 
         <div class="detail-grid">
-          <div class="card">
+          <div class="card seo-block">
             <div class="card-body">
-              <h3>What it includes</h3>
+              <h3>What it does</h3>
+              <p>
+                This is your turnaround plan in a clean, executive-ready wall chart format — but digital, filterable,
+                and always current. It’s built to reduce confusion during fast-moving execution and keep workstreams aligned.
+              </p>
+
+              <h3>Questions it answers</h3>
               <ul class="bullets">
-                <li>Milestones, gates, workstreams, live status</li>
-                <li>Leadership view + readiness tracking</li>
-                <li>Optional: risk ranking + readiness heat maps</li>
+                <li>What are the major gates and milestones this week?</li>
+                <li>Which workstreams are slipping — and what’s driving it?</li>
+                <li>Where is the risk concentrated (area/system)?</li>
+                <li>Are we on track for the next major outage milestone?</li>
+              </ul>
+
+              <div class="seo-kv">
+                <div class="kv">
+                  <strong>Best for</strong>
+                  Turnaround leadership, planners, execution managers, coordination meetings
+                </div>
+                <div class="kv">
+                  <strong>Typical inputs</strong>
+                  Milestone list, workstream plan, P6 schedule export, readiness/constraint signals
+                </div>
+              </div>
+
+              <h3>Optional enhancements</h3>
+              <ul class="bullets">
+                <li>Risk ranking and readiness heat maps</li>
+                <li>Gate acceptance checklist tracking</li>
+                <li>Printable “meeting mode” views</li>
               </ul>
 
               <div class="about-actions" style="margin-top:14px;">
@@ -268,26 +374,53 @@
           </div>
 
           <div class="detail-img">
-            <img class="zoomable" src="assets/hero/PM3.jpg" alt="Turnaround Wall Chart example" data-full="assets/hero/PM3.jpg" loading="lazy" />
+            <img class="zoomable" src="assets/hero/PM3.jpg" alt="Turnaround wall chart Power BI dashboard example" data-full="assets/hero/PM3.jpg" loading="lazy" />
           </div>
         </div>
       </div>
     </section>
 
+    <!-- FIELD -->
     <section id="field" class="section">
       <div class="container">
         <div class="section-head">
-          <h2>Daily Field Reporting Dashboard <a class="backlink muted" href="#top">Back to top ↑</a></h2>
+          <h2>Daily Field Reporting Dashboard</h2>
           <p>Turns daily updates into structured reporting for faster decisions and cleaner communication.</p>
         </div>
 
         <div class="detail-grid">
-          <div class="card">
+          <div class="card seo-block">
             <div class="card-body">
-              <h3>What it includes</h3>
+              <h3>What it does</h3>
+              <p>
+                This dashboard converts field updates into a consistent, leadership-friendly view — progress, productivity,
+                blockers, and open issues. It reduces the time wasted chasing updates and supports better coordination across teams.
+              </p>
+
+              <h3>Questions it answers</h3>
               <ul class="bullets">
-                <li>Daily logs, productivity rollups, blockers, issues</li>
-                <li>Optional: photos + proof links</li>
+                <li>What was accomplished today and what is planned tomorrow?</li>
+                <li>Where did productivity drop — and what’s the reason?</li>
+                <li>What blockers are repeating and need escalation?</li>
+                <li>Which areas are trending behind expected progress?</li>
+              </ul>
+
+              <div class="seo-kv">
+                <div class="kv">
+                  <strong>Best for</strong>
+                  Field supervisors, construction managers, turnaround execution, coordinators
+                </div>
+                <div class="kv">
+                  <strong>Typical inputs</strong>
+                  Daily logs, quantity tracking, manpower, issues list, photos/notes (optional)
+                </div>
+              </div>
+
+              <h3>Common add-ons</h3>
+              <ul class="bullets">
+                <li>Photo evidence + proof links</li>
+                <li>Daily rollup report output (PDF/email-ready)</li>
+                <li>Standardized daily log templates (if you don’t have them)</li>
               </ul>
 
               <div class="about-actions" style="margin-top:14px;">
@@ -298,26 +431,52 @@
           </div>
 
           <div class="detail-img">
-            <img class="zoomable" src="assets/hero/PM4.JPG" alt="Daily Field Reporting example" data-full="assets/hero/PM4.JPG" loading="lazy" />
+            <img class="zoomable" src="assets/hero/PM4.JPG" alt="Daily field reporting Power BI dashboard example" data-full="assets/hero/PM4.JPG" loading="lazy" />
           </div>
         </div>
       </div>
     </section>
 
+    <!-- WORKPACK -->
     <section id="workpack" class="section section-alt">
       <div class="container">
         <div class="section-head">
-          <h2>Workpack Control Dashboard <a class="backlink muted" href="#top">Back to top ↑</a></h2>
-          <p>Track workpacks from planned → released → executed → closed, with proof and closeout readiness.</p>
+          <h2>Workpack Control Dashboard</h2>
+          <p>Track workpacks end-to-end with proof, closeout readiness, and real accountability.</p>
         </div>
 
         <div class="detail-grid">
-          <div class="card">
+          <div class="card seo-block">
             <div class="card-body">
-              <h3>What it includes</h3>
+              <h3>What it does</h3>
+              <p>
+                This dashboard tracks workpack status from planned → released → executed → closed, with proof and closeout readiness.
+                It creates visibility into workflow bottlenecks and helps teams stop losing time in handoffs.
+              </p>
+
+              <h3>Questions it answers</h3>
               <ul class="bullets">
-                <li>Workflow status, proof tracking, closeout readiness</li>
-                <li>Works with: SharePoint lists, Excel logs, Power Apps, Adalo</li>
+                <li>How many workpacks are ready to release right now?</li>
+                <li>Which workpacks are stuck and why?</li>
+                <li>Are we closing work with proof and documentation?</li>
+                <li>What’s the trend of releases vs closes?</li>
+              </ul>
+
+              <div class="seo-kv">
+                <div class="kv">
+                  <strong>Best for</strong>
+                  Workpack owners, coordinators, turnaround controls, planners
+                </div>
+                <div class="kv">
+                  <strong>Typical inputs</strong>
+                  Workpack list, workflow statuses, proof attachments/links, closeout checklist items
+                </div>
+              </div>
+
+              <h3>Works with</h3>
+              <ul class="bullets">
+                <li>SharePoint lists, Excel logs, Power Apps, Adalo</li>
+                <li>P6 or schedule exports (optional)</li>
               </ul>
 
               <div class="about-actions" style="margin-top:14px;">
@@ -328,26 +487,53 @@
           </div>
 
           <div class="detail-img">
-            <img class="zoomable" src="assets/hero/PM5.JPG" alt="Workpack Control example" data-full="assets/hero/PM5.JPG" loading="lazy" />
+            <img class="zoomable" src="assets/hero/PM5.JPG" alt="Workpack control Power BI dashboard example" data-full="assets/hero/PM5.JPG" loading="lazy" />
           </div>
         </div>
       </div>
     </section>
 
+    <!-- CONSTRAINTS -->
     <section id="constraints" class="section">
       <div class="container">
         <div class="section-head">
-          <h2>Constraints & Materials Dashboard <a class="backlink muted" href="#top">Back to top ↑</a></h2>
-          <p>Spot what’s holding work back and drive actions to remove constraints before they impact schedule.</p>
+          <h2>Constraints & Materials Dashboard</h2>
+          <p>See what’s holding work back — prioritize actions and remove blockers before they impact schedule.</p>
         </div>
 
         <div class="detail-grid">
-          <div class="card">
+          <div class="card seo-block">
             <div class="card-body">
-              <h3>What it includes</h3>
+              <h3>What it does</h3>
+              <p>
+                This dashboard highlights constraints that slow execution — materials, permits, access, engineering, inspections, and more.
+                It drives accountability by showing owners, due dates, aging, and what constraints are causing the most schedule risk.
+              </p>
+
+              <h3>Questions it answers</h3>
               <ul class="bullets">
-                <li>Constraint lists, priority ranking, owners, due dates</li>
-                <li>Optional: aging, root cause, action effectiveness</li>
+                <li>What constraints are blocking work today?</li>
+                <li>Which constraints are overdue and who owns them?</li>
+                <li>Which constraint types are trending up?</li>
+                <li>What’s the aging profile and top schedule risk drivers?</li>
+              </ul>
+
+              <div class="seo-kv">
+                <div class="kv">
+                  <strong>Best for</strong>
+                  Coordinators, planners, procurement, engineering, execution leadership
+                </div>
+                <div class="kv">
+                  <strong>Typical inputs</strong>
+                  Constraint log, owners, due dates, status, category/type, affected workpacks
+                </div>
+              </div>
+
+              <h3>Optional enhancements</h3>
+              <ul class="bullets">
+                <li>Aging + root cause tracking</li>
+                <li>Action effectiveness (did we actually remove the blocker?)</li>
+                <li>Escalation lists for daily coordination</li>
               </ul>
 
               <div class="about-actions" style="margin-top:14px;">
@@ -358,7 +544,7 @@
           </div>
 
           <div class="detail-img">
-            <img class="zoomable" src="assets/hero/PM6.JPG" alt="Constraints & Materials example" data-full="assets/hero/PM6.JPG" loading="lazy" />
+            <img class="zoomable" src="assets/hero/PM6.JPG" alt="Constraints and materials Power BI dashboard example" data-full="assets/hero/PM6.JPG" loading="lazy" />
           </div>
         </div>
       </div>
@@ -371,7 +557,7 @@
     </div>
   </footer>
 
-  <!-- Fullscreen Image Viewer (same as main site) -->
+  <!-- Fullscreen Image Viewer -->
   <div class="viewer" id="viewer" aria-hidden="true">
     <div class="viewer-backdrop" id="viewerBackdrop"></div>
     <div class="viewer-ui">
