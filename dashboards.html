@@ -3,232 +3,552 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dashboards | Shell Key</title>
-  <meta name="description" content="Power BI dashboards for project controls, readiness, field reporting, workpacks, and constraints. Request info or book a call." />
-  <link rel="stylesheet" href="styles.css" />
+  <title>Shell Key | Dashboards</title>
+
+  <!-- IMPORTANT: This must match your main site -->
+  <link rel="stylesheet" href="assets/styles.css?v=3" />
+
+  <!-- Small page-only styling to make the index look clean (does NOT change your main website) -->
+  <style>
+    html { scroll-behavior: smooth; }
+    .dash-index { margin-top: 10px; }
+    .dash-index-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .dash-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+    .dash-link .card { cursor: pointer; }
+    .dash-mini {
+      padding: 14px;
+    }
+    .dash-mini h3 { margin: 0 0 6px; }
+    .dash-mini p { margin: 0; }
+    .dash-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .back-top {
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 0.95em;
+      opacity: 0.9;
+    }
+    @media (max-width: 980px){
+      .dash-index-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 620px){
+      .dash-index-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
+
 <body>
-
-  <div class="container">
-
-    <div class="topnav">
-      <div class="brand">
-        <span class="brand-dot"></span>
-        <span>Shell Key</span>
-      </div>
-      <div class="navlinks">
-        <a class="pill" href="index.html">Home</a>
-        <a class="pill" href="dashboards.html">Dashboards</a>
-        <a class="pill" href="contact.html">Contact</a>
-      </div>
-    </div>
-
-    <div class="hero" id="top">
-      <h1>Dashboards</h1>
-      <p>Executive-ready views of progress, cost, productivity, and readiness — built for decisions.</p>
-    </div>
-
-    <!-- CARD GRID (click jumps to sections below) -->
-    <div class="grid">
-
-      <a class="card-link" href="#executive">
-        <div class="card">
-          <div class="card-img">
-            <img src="images/dashboard-executive.jpg" alt="Executive Summary Dashboard">
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">Executive Summary</h3>
-            <p class="card-desc">High-level KPIs, critical signals, cost vs forecast, and decision-ready highlights.</p>
-            <ul class="bullets">
-              <li>Leadership visibility</li>
-              <li>Cost + schedule health</li>
-              <li>Instant drilldowns</li>
-            </ul>
-          </div>
-        </div>
+  <!-- Header / Nav (same look as main site) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html#home" aria-label="Shell Key Home">
+        <img
+          class="brand-logo"
+          src="assets/logo/ShellKeyWhiteTrace.png"
+          alt="Shell Key"
+          loading="eager"
+        />
       </a>
 
-      <a class="card-link" href="#readiness">
-        <div class="card">
-          <div class="card-img">
-            <img src="images/dashboard-readiness.jpg" alt="Readiness and Planning Dashboard">
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">Readiness & Planning</h3>
-            <p class="card-desc">Workpack readiness, constraints, milestones, and action tracking in one view.</p>
-            <ul class="bullets">
-              <li>Constraint flags</li>
-              <li>Readiness scoring</li>
-              <li>Accountability</li>
-            </ul>
+      <nav class="nav">
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a class="nav-link" href="index.html#home">Home</a></li>
+          <li><a class="nav-link" href="dashboards.html">Dashboards</a></li>
+          <li><a class="nav-link" href="index.html#applications">Applications</a></li>
+          <li><a class="nav-link" href="index.html#about">About</a></li>
+          <li><a class="nav-link" href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page top -->
+    <section id="top" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Dashboards</h2>
+          <p>Select a dashboard type below to jump to more detail. Each section includes a clear call-to-action to contact us.</p>
+        </div>
+
+        <!-- Dashboard Index (NOT in header) -->
+        <div class="dash-index">
+          <div class="card">
+            <div class="card-body">
+              <h3 style="margin-top:0;">Dashboard Index</h3>
+              <p class="muted">Click any dashboard title below to jump to its section.</p>
+
+              <div class="dash-index-grid">
+                <a class="dash-link" href="#executive">
+                  <div class="card dash-mini">
+                    <h3>Executive Summary</h3>
+                    <p class="muted">KPIs, critical signals, cost vs forecast, drilldowns.</p>
+                  </div>
+                </a>
+
+                <a class="dash-link" href="#readiness">
+                  <div class="card dash-mini">
+                    <h3>Readiness & Planning</h3>
+                    <p class="muted">Readiness scoring, constraints, milestones, actions.</p>
+                  </div>
+                </a>
+
+                <a class="dash-link" href="#wallchart">
+                  <div class="card dash-mini">
+                    <h3>Turnaround Wall Chart</h3>
+                    <p class="muted">Milestones + gates, workstreams, live status.</p>
+                  </div>
+                </a>
+
+                <a class="dash-link" href="#field">
+                  <div class="card dash-mini">
+                    <h3>Daily Field Reporting</h3>
+                    <p class="muted">Daily logs, productivity, blockers, issues.</p>
+                  </div>
+                </a>
+
+                <a class="dash-link" href="#workpack">
+                  <div class="card dash-mini">
+                    <h3>Workpack Control</h3>
+                    <p class="muted">Planned → released → executed → closed with proof.</p>
+                  </div>
+                </a>
+
+                <a class="dash-link" href="#constraints">
+                  <div class="card dash-mini">
+                    <h3>Constraints & Materials</h3>
+                    <p class="muted">Materials, permits, access, engineering, inspections.</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="dash-actions">
+                <a class="btn btn-primary" href="index.html#contact">Request a Demo</a>
+                <a class="btn btn-ghost" href="index.html#contact">Ask a Question</a>
+              </div>
+
+            </div>
           </div>
         </div>
-      </a>
 
-      <a class="card-link" href="#wallchart">
+        <!-- Card gallery (same look as main site cards) -->
+        <div class="grid" style="margin-top:18px;">
+          <a class="dash-link" href="#executive">
+            <article class="card">
+              <div class="card-media">
+                <img class="zoomable" src="assets/hero/PM1.JPG" alt="Project controls dashboard example" data-full="assets/hero/PM1.JPG" loading="lazy" />
+              </div>
+              <div class="card-body">
+                <h3>Executive Summary</h3>
+                <p>High-level KPIs, critical path signals, cost vs forecast, and decision-ready highlights.</p>
+                <ul class="bullets">
+                  <li>Leadership visibility</li>
+                  <li>Cost + schedule health</li>
+                  <li>Instant drilldowns</li>
+                </ul>
+              </div>
+            </article>
+          </a>
+
+          <a class="dash-link" href="#readiness">
+            <article class="card">
+              <div class="card-media">
+                <img class="zoomable" src="assets/hero/PM2.JPG" alt="Readiness and planning dashboard example" data-full="assets/hero/PM2.JPG" loading="lazy" />
+              </div>
+              <div class="card-body">
+                <h3>Readiness & Planning</h3>
+                <p>Workpack readiness, constraints, upcoming milestones, and action tracking in one view.</p>
+                <ul class="bullets">
+                  <li>Constraint flags</li>
+                  <li>Readiness scoring</li>
+                  <li>Accountability</li>
+                </ul>
+              </div>
+            </article>
+          </a>
+
+          <a class="dash-link" href="#wallchart">
+            <article class="card">
+              <div class="card-media">
+                <img class="zoomable" src="assets/hero/PM3.jpg" alt="Wall chart and turnaround visibility example" data-full="assets/hero/PM3.jpg" loading="lazy" />
+              </div>
+              <div class="card-body">
+                <h3>Turnaround Wall Chart</h3>
+                <p>Big-picture plan and readiness tracking that stays aligned from planning through execution.</p>
+                <ul class="bullets">
+                  <li>Milestones + gates</li>
+                  <li>Workstreams</li>
+                  <li>Live status</li>
+                </ul>
+              </div>
+            </article>
+          </a>
+
+          <a class="dash-link" href="#field">
+            <article class="card">
+              <div class="card-media">
+                <img class="zoomable" src="assets/hero/PM4.JPG" alt="Daily reporting and field visibility example" data-full="assets/hero/PM4.JPG" loading="lazy" />
+              </div>
+              <div class="card-body">
+                <h3>Daily Field Reporting</h3>
+                <p>Daily progress, productivity, blockers, and site updates — structured for fast reporting.</p>
+                <ul class="bullets">
+                  <li>Daily log views</li>
+                  <li>Progress rollups</li>
+                  <li>Issue tracking</li>
+                </ul>
+              </div>
+            </article>
+          </a>
+
+          <a class="dash-link" href="#workpack">
+            <article class="card">
+              <div class="card-media">
+                <img class="zoomable" src="assets/hero/PM5.JPG" alt="Workpacks and execution status example" data-full="assets/hero/PM5.JPG" loading="lazy" />
+              </div>
+              <div class="card-body">
+                <h3>Workpack Control</h3>
+                <p>Track workpack status end-to-end: planned → released → executed → closed with proof.</p>
+                <ul class="bullets">
+                  <li>Status workflow</li>
+                  <li>Proof + attachments</li>
+                  <li>Closeout readiness</li>
+                </ul>
+              </div>
+            </article>
+          </a>
+
+          <a class="dash-link" href="#constraints">
+            <article class="card">
+              <div class="card-media">
+                <img class="zoomable" src="assets/hero/PM6.JPG" alt="Materials, equipment, and constraints tracking example" data-full="assets/hero/PM6.JPG" loading="lazy" />
+              </div>
+              <div class="card-body">
+                <h3>Constraints & Materials</h3>
+                <p>See what’s holding work back: materials, permits, access, engineering, inspections, and more.</p>
+                <ul class="bullets">
+                  <li>Constraint lists</li>
+                  <li>Priority ranking</li>
+                  <li>Owner actions</li>
+                </ul>
+              </div>
+            </article>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Detail sections -->
+    <section id="executive" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Executive Summary Dashboard <a class="back-top muted" href="#top">Back to index ↑</a></h2>
+          <p>Decision-ready visibility for leadership — KPI rollups and drilldowns that drive action.</p>
+        </div>
         <div class="card">
-          <div class="card-img">
-            <img src="images/dashboard-wallchart.jpg" alt="Turnaround Wall Chart Dashboard">
-          </div>
           <div class="card-body">
-            <h3 class="card-title">Turnaround Wall Chart</h3>
-            <p class="card-desc">Big-picture plan and readiness tracking aligned from planning through execution.</p>
+            <h3>Best for</h3>
             <ul class="bullets">
-              <li>Milestones + gates</li>
-              <li>Workstreams</li>
-              <li>Live status</li>
+              <li>Turnaround leadership, project managers, owners, directors</li>
+              <li>Fast “where are we / what’s stuck / what’s next” clarity</li>
             </ul>
+            <h3 style="margin-top:14px;">What we deliver</h3>
+            <ul class="bullets">
+              <li>Executive KPI view + exception flags</li>
+              <li>Trends, drilldowns, and action-ready summaries</li>
+              <li>Data model + refresh setup (Excel/SharePoint/SQL as needed)</li>
+            </ul>
+            <div class="about-actions" style="margin-top:14px;">
+              <a class="btn btn-primary" href="index.html#contact">Request Info / Book a Call</a>
+              <a class="btn btn-ghost" href="#top">Back to Index</a>
+            </div>
           </div>
         </div>
-      </a>
+      </div>
+    </section>
 
-      <a class="card-link" href="#field">
+    <section id="readiness" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Readiness & Planning Dashboard <a class="back-top muted" href="#top">Back to index ↑</a></h2>
+          <p>Workpack readiness, constraint flags, due dates, and accountability — so execution isn’t surprised.</p>
+        </div>
         <div class="card">
-          <div class="card-img">
-            <img src="images/dashboard-field.jpg" alt="Daily Field Reporting Dashboard">
-          </div>
           <div class="card-body">
-            <h3 class="card-title">Daily Field Reporting</h3>
-            <p class="card-desc">Daily progress, productivity, blockers, and site updates — structured for fast reporting.</p>
+            <h3>Best for</h3>
             <ul class="bullets">
-              <li>Daily log views</li>
-              <li>Progress rollups</li>
-              <li>Issue tracking</li>
+              <li>Planners, readiness leads, coordinators</li>
+              <li>Preventing execution delays caused by missing inputs</li>
             </ul>
+            <h3 style="margin-top:14px;">What we deliver</h3>
+            <ul class="bullets">
+              <li>Readiness scoring by package/workstream</li>
+              <li>Constraint list with owners + due dates</li>
+              <li>Milestones and action tracking views</li>
+            </ul>
+            <div class="about-actions" style="margin-top:14px;">
+              <a class="btn btn-primary" href="index.html#contact">Request Info / Book a Call</a>
+              <a class="btn btn-ghost" href="#top">Back to Index</a>
+            </div>
           </div>
         </div>
-      </a>
+      </div>
+    </section>
 
-      <a class="card-link" href="#workpack">
+    <section id="wallchart" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Turnaround Wall Chart Dashboard <a class="back-top muted" href="#top">Back to index ↑</a></h2>
+          <p>A “digital wall chart” that keeps milestones, gates, and execution status aligned.</p>
+        </div>
         <div class="card">
-          <div class="card-img">
-            <img src="images/dashboard-workpack.jpg" alt="Workpack Control Dashboard">
-          </div>
           <div class="card-body">
-            <h3 class="card-title">Workpack Control</h3>
-            <p class="card-desc">Track workpack status end-to-end: planned → released → executed → closed with proof.</p>
+            <h3>What we deliver</h3>
             <ul class="bullets">
-              <li>Status workflow</li>
-              <li>Proof + attachments</li>
-              <li>Closeout readiness</li>
+              <li>Milestone & gate tracking with live status</li>
+              <li>Workstream rollups for leadership visibility</li>
+              <li>Optional: risk ranking + readiness heat maps</li>
             </ul>
+            <div class="about-actions" style="margin-top:14px;">
+              <a class="btn btn-primary" href="index.html#contact">Request Info / Book a Call</a>
+              <a class="btn btn-ghost" href="#top">Back to Index</a>
+            </div>
           </div>
         </div>
-      </a>
+      </div>
+    </section>
 
-      <a class="card-link" href="#constraints">
+    <section id="field" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Daily Field Reporting Dashboard <a class="back-top muted" href="#top">Back to index ↑</a></h2>
+          <p>Structured daily reporting: progress, productivity, blockers, and issue tracking.</p>
+        </div>
         <div class="card">
-          <div class="card-img">
-            <img src="images/dashboard-constraints.jpg" alt="Constraints and Materials Dashboard">
-          </div>
           <div class="card-body">
-            <h3 class="card-title">Constraints & Materials</h3>
-            <p class="card-desc">See what’s holding work back: materials, permits, access, engineering, inspections, and more.</p>
+            <h3>What we deliver</h3>
             <ul class="bullets">
-              <li>Constraint lists</li>
-              <li>Priority ranking</li>
-              <li>Owner actions</li>
+              <li>Daily log rollups by area/workstream</li>
+              <li>Blockers + issue tracking with ownership</li>
+              <li>Optional: photos / proof links for field updates</li>
             </ul>
+            <div class="about-actions" style="margin-top:14px;">
+              <a class="btn btn-primary" href="index.html#contact">Request Info / Book a Call</a>
+              <a class="btn btn-ghost" href="#top">Back to Index</a>
+            </div>
           </div>
         </div>
-      </a>
-
-    </div>
-
-    <!-- DETAILS SECTION (one page) -->
-    <div class="section" id="executive">
-      <h2>Executive Summary Dashboard</h2>
-      <p>Built for leaders who need a fast, reliable view of what matters most — with drilldowns for action.</p>
-      <ul class="bullets">
-        <li><strong>Best for:</strong> Turnaround leadership, project managers, owners, directors</li>
-        <li><strong>Includes:</strong> KPI cards, trends, highlights, exceptions, drilldowns</li>
-        <li><strong>Inputs:</strong> Cost, schedule, progress, constraints, workforce, productivity (what you have today)</li>
-      </ul>
-      <div class="cta">
-        <a class="btn" href="contact.html">Request Info / Book a Call</a>
-        <a class="btn secondary" href="#top">Back to top</a>
       </div>
-    </div>
+    </section>
 
-    <div class="section" id="readiness">
-      <h2>Readiness & Planning Dashboard</h2>
-      <p>Tracks workpack readiness, gating items, and upcoming milestones so teams don’t get surprised in execution.</p>
-      <ul class="bullets">
-        <li><strong>Best for:</strong> planners, readiness leads, coordinators</li>
-        <li><strong>Includes:</strong> readiness scoring, constraint flags, due dates, accountability</li>
-        <li><strong>Outputs:</strong> “What is ready / not ready” with reasons and actions</li>
-      </ul>
-      <div class="cta">
-        <a class="btn" href="contact.html">Request Info / Book a Call</a>
-        <a class="btn secondary" href="#top">Back to top</a>
+    <section id="workpack" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Workpack Control Dashboard <a class="back-top muted" href="#top">Back to index ↑</a></h2>
+          <p>Track workpacks end-to-end with proof and closeout readiness visibility.</p>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>What we deliver</h3>
+            <ul class="bullets">
+              <li>Status workflow tracking and aging</li>
+              <li>Proof/attachments and closeout readiness views</li>
+              <li>Optional: SharePoint list + Power Apps input forms</li>
+            </ul>
+            <div class="about-actions" style="margin-top:14px;">
+              <a class="btn btn-primary" href="index.html#contact">Request Info / Book a Call</a>
+              <a class="btn btn-ghost" href="#top">Back to Index</a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="section" id="wallchart">
-      <h2>Turnaround Wall Chart Dashboard</h2>
-      <p>A “digital wall chart” view that keeps the full plan aligned from planning through execution.</p>
-      <ul class="bullets">
-        <li><strong>Best for:</strong> turnaround leadership, planners, execution managers</li>
-        <li><strong>Includes:</strong> milestones, gates, workstreams, live status</li>
-        <li><strong>Optional:</strong> risk ranking and readiness heat maps</li>
-      </ul>
-      <div class="cta">
-        <a class="btn" href="contact.html">Request Info / Book a Call</a>
-        <a class="btn secondary" href="#top">Back to top</a>
+    <section id="constraints" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Constraints & Materials Dashboard <a class="back-top muted" href="#top">Back to index ↑</a></h2>
+          <p>Identify what’s holding work back and drive actions before schedule impact.</p>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>What we deliver</h3>
+            <ul class="bullets">
+              <li>Constraint list by type/owner/due date</li>
+              <li>Priority ranking and aging to focus the team</li>
+              <li>Optional: root cause categories and action effectiveness</li>
+            </ul>
+            <div class="about-actions" style="margin-top:14px;">
+              <a class="btn btn-primary" href="index.html#contact">Request Info / Book a Call</a>
+              <a class="btn btn-ghost" href="#top">Back to Index</a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="section" id="field">
-      <h2>Daily Field Reporting Dashboard</h2>
-      <p>Turns daily updates into structured reporting for faster decisions and cleaner communication.</p>
-      <ul class="bullets">
-        <li><strong>Best for:</strong> field supervisors, construction managers, turnaround execution</li>
-        <li><strong>Includes:</strong> daily logs, productivity rollups, blockers, issues</li>
-        <li><strong>Optional:</strong> photos + proof links</li>
-      </ul>
-      <div class="cta">
-        <a class="btn" href="contact.html">Request Info / Book a Call</a>
-        <a class="btn secondary" href="#top">Back to top</a>
-      </div>
-    </div>
+  </main>
 
-    <div class="section" id="workpack">
-      <h2>Workpack Control Dashboard</h2>
-      <p>Track workpacks from planned → released → executed → closed, with proof and closeout readiness.</p>
-      <ul class="bullets">
-        <li><strong>Best for:</strong> workpack owners, coordinators, TA controls</li>
-        <li><strong>Includes:</strong> workflow status, proof tracking, closeout readiness</li>
-        <li><strong>Works with:</strong> SharePoint lists, Excel logs, Power Apps, Adalo</li>
-      </ul>
-      <div class="cta">
-        <a class="btn" href="contact.html">Request Info / Book a Call</a>
-        <a class="btn secondary" href="#top">Back to top</a>
-      </div>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="muted">© 2025 Shell Key. All rights reserved.</div>
     </div>
+  </footer>
 
-    <div class="section" id="constraints">
-      <h2>Constraints & Materials Dashboard</h2>
-      <p>Spot what’s holding work back and drive actions to remove constraints before they impact schedule.</p>
-      <ul class="bullets">
-        <li><strong>Best for:</strong> constraints coordinators, planners, procurement, engineering</li>
-        <li><strong>Includes:</strong> constraint lists, priority ranking, owners, due dates</li>
-        <li><strong>Optional:</strong> aging, root cause, action effectiveness</li>
-      </ul>
-      <div class="cta">
-        <a class="btn" href="contact.html">Request Info / Book a Call</a>
-        <a class="btn secondary" href="#top">Back to top</a>
-      </div>
+  <!-- Fullscreen Image Viewer (same as main site) -->
+  <div class="viewer" id="viewer" aria-hidden="true">
+    <div class="viewer-backdrop" id="viewerBackdrop"></div>
+    <div class="viewer-ui">
+      <button class="viewer-btn" id="viewerClose" aria-label="Close image">✕</button>
+      <a class="viewer-btn" id="viewerOpenNew" href="#" target="_blank" rel="noopener" aria-label="Open image in new tab">↗</a>
+      <button class="viewer-btn" id="viewerReset" aria-label="Reset zoom">⟲</button>
     </div>
-
-    <div class="footer">
-      © <span id="yr"></span> shellkey.company — Dashboards & Digital Project Controls
+    <div class="viewer-stage" id="viewerStage">
+      <img id="viewerImg" alt="Expanded view" />
     </div>
-
   </div>
 
   <script>
-    document.getElementById("yr").textContent = new Date().getFullYear();
-  </script>
+    // Mobile Nav
+    const navToggle = document.getElementById("navToggle");
+    const navLinks = document.getElementById("navLinks");
 
+    function closeMenu() {
+      navLinks.classList.remove("open");
+      navToggle.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+    }
+
+    navToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      navToggle.classList.toggle("open", isOpen);
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    document.querySelectorAll(".nav-link").forEach(a => {
+      a.addEventListener("click", () => closeMenu());
+    });
+
+    document.addEventListener("click", (e) => { if (!e.target.closest(".nav")) closeMenu(); });
+
+    // Viewer
+    const viewer = document.getElementById("viewer");
+    const viewerImg = document.getElementById("viewerImg");
+    const viewerBackdrop = document.getElementById("viewerBackdrop");
+    const viewerClose = document.getElementById("viewerClose");
+    const viewerOpenNew = document.getElementById("viewerOpenNew");
+    const viewerReset = document.getElementById("viewerReset");
+    const stage = document.getElementById("viewerStage");
+
+    let scale = 1, translateX = 0, translateY = 0;
+
+    function applyTransform() {
+      viewerImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+    }
+    function resetTransform() {
+      scale = 1; translateX = 0; translateY = 0; applyTransform();
+    }
+    function openViewer(src) {
+      viewerImg.src = src;
+      viewerOpenNew.href = src;
+      resetTransform();
+      viewer.classList.add("open");
+      viewer.setAttribute("aria-hidden", "false");
+      document.body.classList.add("no-scroll");
+    }
+    function closeViewer() {
+      viewer.classList.remove("open");
+      viewer.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("no-scroll");
+      viewerImg.src = "";
+    }
+
+    document.querySelectorAll(".zoomable").forEach(img => {
+      img.addEventListener("click", (e) => {
+        // If user clicks image, still allow zoom (don’t block the anchor jump)
+        e.preventDefault();
+        openViewer(img.getAttribute("data-full") || img.src);
+      });
+    });
+
+    viewerBackdrop.addEventListener("click", closeViewer);
+    viewerClose.addEventListener("click", closeViewer);
+    viewerReset.addEventListener("click", resetTransform);
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && viewer.classList.contains("open")) closeViewer(); });
+
+    // Drag + zoom
+    let isDragging = false, startX = 0, startY = 0;
+    let pinchStartDist = 0, pinchStartScale = 1;
+
+    function dist(t1, t2) { return Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY); }
+
+    stage.addEventListener("touchstart", (e) => {
+      if (!viewer.classList.contains("open")) return;
+      if (e.touches.length === 2) {
+        pinchStartDist = dist(e.touches[0], e.touches[1]);
+        pinchStartScale = scale;
+      } else if (e.touches.length === 1) {
+        isDragging = true;
+        startX = e.touches[0].clientX - translateX;
+        startY = e.touches[0].clientY - translateY;
+      }
+    }, { passive: true });
+
+    stage.addEventListener("touchmove", (e) => {
+      if (!viewer.classList.contains("open")) return;
+      if (e.touches.length === 2) {
+        const factor = dist(e.touches[0], e.touches[1]) / pinchStartDist;
+        scale = Math.min(6, Math.max(1, pinchStartScale * factor));
+        applyTransform();
+      } else if (e.touches.length === 1 && isDragging) {
+        translateX = e.touches[0].clientX - startX;
+        translateY = e.touches[0].clientY - startY;
+        applyTransform();
+      }
+    }, { passive: true });
+
+    stage.addEventListener("touchend", () => { isDragging = false; pinchStartDist = 0; });
+
+    stage.addEventListener("mousedown", (e) => {
+      if (!viewer.classList.contains("open")) return;
+      isDragging = true;
+      startX = e.clientX - translateX;
+      startY = e.clientY - translateY;
+    });
+
+    window.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+      translateX = e.clientX - startX;
+      translateY = e.clientY - startY;
+      applyTransform();
+    });
+
+    window.addEventListener("mouseup", () => { isDragging = false; });
+
+    stage.addEventListener("wheel", (e) => {
+      if (!viewer.classList.contains("open")) return;
+      e.preventDefault();
+      scale = Math.min(6, Math.max(1, scale + (Math.sign(e.deltaY) < 0 ? 0.15 : -0.15)));
+      applyTransform();
+    }, { passive: false });
+  </script>
 </body>
 </html>
