@@ -27,7 +27,10 @@
 
         <ul class="nav-links" id="navLinks">
           <li><a class="nav-link" href="#home">Home</a></li>
-          <li><a class="nav-link" href="#dashboards">Dashboards</a></li>
+
+          <!-- CHANGED: Dashboards now goes to dashboards.html -->
+          <li><a class="nav-link" href="dashboards.html">Dashboards</a></li>
+
           <li><a class="nav-link" href="#applications">Applications</a></li>
           <li><a class="nav-link" href="#about">About</a></li>
           <li><a class="nav-link" href="#contact">Contact</a></li>
@@ -60,14 +63,16 @@
 
             <div class="hero-cta">
               <a class="btn btn-primary" href="#contact">Request a Demo</a>
-              <a class="btn btn-ghost" href="#dashboards">View Examples</a>
+
+              <!-- CHANGED: View Examples now goes to dashboards.html -->
+              <a class="btn btn-ghost" href="dashboards.html">View Examples</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Dashboards -->
+    <!-- Dashboards (kept exactly as-is on your home page) -->
     <section id="dashboards" class="section">
       <div class="container">
         <div class="section-head">
@@ -284,7 +289,9 @@
 
             <div class="about-actions">
               <a class="btn btn-primary" href="#contact">Contact Me</a>
-              <a class="btn btn-ghost" href="#dashboards">See Dashboard Examples</a>
+
+              <!-- CHANGED: dashboard examples now goes to dashboards.html -->
+              <a class="btn btn-ghost" href="dashboards.html">See Dashboard Examples</a>
             </div>
           </div>
         </div>
@@ -375,7 +382,11 @@
       navToggle.setAttribute("aria-expanded", String(isOpen));
     });
 
-    document.querySelectorAll(".nav-link").forEach(a => a.addEventListener("click", closeMenu));
+    // Keep behavior the same (close menu on click)
+    document.querySelectorAll(".nav-link").forEach(a => {
+      a.addEventListener("click", () => closeMenu());
+    });
+
     document.addEventListener("click", (e) => { if (!e.target.closest(".nav")) closeMenu(); });
 
     // Contact form -> mailto
