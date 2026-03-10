@@ -3,105 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shell Key | Power BI Dashboards for Industrial Project Controls</title>
-
-  <!-- Same CSS as main site -->
+  <title>Shell Key | Digital Project Controls</title>
   <link rel="stylesheet" href="assets/styles.css?v=3" />
-
-  <!-- Page-specific (minimal) helper styles -->
-  <style>
-    html { scroll-behavior: smooth; }
-
-    .jump-grid{
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 14px;
-    }
-    .jump-card{
-      text-decoration:none;
-      color:inherit;
-      display:block;
-    }
-    .jump-card .card{
-      cursor:pointer;
-      height:100%;
-      transition: transform .15s ease, box-shadow .15s ease;
-    }
-    .jump-card:hover .card{
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(0,0,0,.35);
-    }
-    .jump-title{
-      margin:0 0 6px;
-      font-size: 1.05rem;
-    }
-    .jump-desc{
-      margin:0;
-    }
-
-    .detail-grid{
-      display:grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 16px;
-      align-items:start;
-    }
-    .detail-img{
-      border-radius: 18px;
-      overflow:hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-      background: rgba(255,255,255,.03);
-    }
-    .detail-img img{
-      width:100%;
-      height:auto;
-      display:block;
-      cursor: zoom-in;
-    }
-
-    .seo-block h3{
-      margin: 14px 0 8px;
-    }
-    .seo-kv{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    .kv{
-      padding: 12px;
-      border-radius: 14px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.06);
-    }
-    .kv strong{
-      display:block;
-      margin-bottom: 6px;
-    }
-    .small-note{
-      margin-top: 10px;
-    }
-
-    @media (max-width: 980px){
-      .jump-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .detail-grid{ grid-template-columns: 1fr; }
-      .seo-kv{ grid-template-columns: 1fr; }
-    }
-    @media (max-width: 620px){
-      .jump-grid{ grid-template-columns: 1fr; }
-    }
-  </style>
-
-  <!-- SEO meta -->
-  <meta name="description" content="Shell Key builds Power BI dashboards for industrial project controls, turnarounds, and leadership visibility. Explore Executive Summary, Readiness & Planning, Turnaround Wall Chart, Daily Field Reporting, Workpack Control, and Constraints & Materials dashboards." />
 </head>
 
 <body>
-  <!-- Header / Nav -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html#home" aria-label="Shell Key Home">
-        <img class="brand-logo" src="assets/logo/ShellKeyWhiteTrace.png" alt="Shell Key" loading="eager" />
+      <a class="brand" href="#home" aria-label="Shell Key Home">
+        <img
+          class="brand-logo"
+          src="assets/logo/ShellKeyWhiteTrace.png"
+          alt="Shell Key"
+          loading="eager"
+        />
       </a>
 
       <nav class="nav">
@@ -110,441 +25,256 @@
         </button>
 
         <ul class="nav-links" id="navLinks">
-          <li><a class="nav-link" href="index.html#home">Home</a></li>
-          <li><a class="nav-link" href="index.html#applications">Applications</a></li>
-          <li><a class="nav-link" href="index.html#about">About</a></li>
-          <li><a class="nav-link" href="index.html#contact">Contact</a></li>
+          <li><a class="nav-link" href="#home">Home</a></li>
+          <li><a class="nav-link" href="#dashboards">Dashboards</a></li>
+          <li><a class="nav-link" href="#applications">Applications</a></li>
+          <li><a class="nav-link" href="store.html">Store</a></li>
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- Top -->
-    <section id="top" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Power BI Dashboards</h2>
-          <p>Dashboard examples designed for industrial execution, turnarounds, and leadership decision-making.</p>
-        </div>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-card">
+          <div class="hero-media">
+            <img
+              class="hero-img zoomable"
+              src="assets/hero/Home.png"
+              alt="Shell Key hero"
+              loading="eager"
+              data-full="assets/hero/Home.png"
+            />
+          </div>
 
-        <div class="card">
-          <div class="card-body">
-            <h3 style="margin-top:0;">Select a Dashboard</h3>
-            <p class="muted">
-              Click a dashboard below to jump to details. Each section explains what it does, what data it needs,
-              and how it helps leadership and execution teams make faster decisions.
+          <div class="hero-banner">
+            <h1>Digital Project Controls</h1>
+
+            <p>
+              Real-time dashboards, mobile applications, and project intelligence built for
+              industrial execution, turnarounds, outages, and leadership visibility.
             </p>
 
-            <div class="jump-grid">
-              <a class="jump-card" href="#executive">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="jump-title">Executive Summary</h4>
-                    <p class="jump-desc muted">KPIs, critical signals, cost vs forecast, drilldowns.</p>
-                  </div>
-                </div>
-              </a>
-
-              <a class="jump-card" href="#readiness">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="jump-title">Readiness & Planning</h4>
-                    <p class="jump-desc muted">Readiness scoring, constraints, milestones, actions.</p>
-                  </div>
-                </div>
-              </a>
-
-              <a class="jump-card" href="#wallchart">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="jump-title">Turnaround Wall Chart</h4>
-                    <p class="jump-desc muted">Milestones + gates, workstreams, live status.</p>
-                  </div>
-                </div>
-              </a>
-
-              <a class="jump-card" href="#field">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="jump-title">Daily Field Reporting</h4>
-                    <p class="jump-desc muted">Daily logs, productivity, blockers, issues.</p>
-                  </div>
-                </div>
-              </a>
-
-              <a class="jump-card" href="#workpack">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="jump-title">Workpack Control</h4>
-                    <p class="jump-desc muted">Planned → released → executed → closed with proof.</p>
-                  </div>
-                </div>
-              </a>
-
-              <a class="jump-card" href="#constraints">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="jump-title">Constraints & Materials</h4>
-                    <p class="jump-desc muted">Materials, permits, access, engineering, inspections.</p>
-                  </div>
-                </div>
-              </a>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#contact">Request a Demo</a>
+              <a class="btn btn-ghost" href="#dashboards">View Examples</a>
             </div>
-
-            <div class="about-actions" style="margin-top:14px;">
-              <a class="btn btn-primary" href="index.html#contact">Request a Demo</a>
-              <a class="btn btn-ghost" href="index.html#contact">Ask a Question</a>
-            </div>
-
-            <p class="muted small-note">
-              Tip: If you already have Excel logs, SharePoint lists, Power Apps, or field reporting data, we can connect it and start fast.
-              If you don’t, we can build a clean tracker that feeds the dashboard so you aren’t stuck in spreadsheet chaos.
-            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- EXECUTIVE -->
-    <section id="executive" class="section section-alt">
+    <!-- DASHBOARDS -->
+    <section id="dashboards" class="section">
       <div class="container">
         <div class="section-head">
-          <h2>Executive Summary Dashboard</h2>
-          <p>Fast, reliable leadership visibility — with drilldowns that turn questions into actions.</p>
+          <h2>Dashboards</h2>
+          <p>
+            Executive-ready reporting built for schedule, cost, field progress, and project controls.
+          </p>
         </div>
 
-        <div class="detail-grid">
-          <div class="card seo-block">
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-media">
+              <img
+                class="card-img zoomable"
+                src="assets/dashboards/dashboard-1.png"
+                alt="Project controls dashboard example"
+                loading="lazy"
+                data-full="assets/dashboards/dashboard-1.png"
+              />
+            </div>
             <div class="card-body">
-              <h3>What it does</h3>
+              <h3>Executive Project Controls</h3>
               <p>
-                This dashboard gives leadership a single view of where the job stands today — schedule health, cost outlook,
-                progress performance, and what’s blocking the next milestones. It’s designed to reduce “status meeting noise”
-                and focus the team on priorities.
+                High-level visibility into budget, actuals, commitments, milestones, and overall health.
               </p>
+            </div>
+          </article>
 
-              <h3>Questions it answers</h3>
-              <ul class="bullets">
-                <li>Are we ahead or behind plan — and why?</li>
-                <li>Is cost trending to the forecast (or overrun)?</li>
-                <li>What are the top drivers impacting schedule and productivity?</li>
-                <li>What needs an owner today?</li>
-              </ul>
+          <article class="card">
+            <div class="card-media">
+              <img
+                class="card-img zoomable"
+                src="assets/dashboards/dashboard-2.png"
+                alt="Schedule and progress dashboard example"
+                loading="lazy"
+                data-full="assets/dashboards/dashboard-2.png"
+              />
+            </div>
+            <div class="card-body">
+              <h3>Schedule & Progress</h3>
+              <p>
+                Track baseline versus current plan, milestone slippage, earned progress, and key trends.
+              </p>
+            </div>
+          </article>
 
-              <div class="seo-kv">
-                <div class="kv">
-                  <strong>Best for</strong>
-                  Turnaround leadership, project managers, owners, directors, planners
-                </div>
-                <div class="kv">
-                  <strong>Typical inputs</strong>
-                  Schedule (P6/export), cost summary, progress quantities, constraints/issues, workforce hours
-                </div>
-              </div>
+          <article class="card">
+            <div class="card-media">
+              <img
+                class="card-img zoomable"
+                src="assets/dashboards/dashboard-3.png"
+                alt="Cost and spend dashboard example"
+                loading="lazy"
+                data-full="assets/dashboards/dashboard-3.png"
+              />
+            </div>
+            <div class="card-body">
+              <h3>Cost & Forecasting</h3>
+              <p>
+                Compare approved budget, commitments, actual spend, and forecast at completion in one view.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-              <h3>What you get (deliverables)</h3>
-              <ul class="bullets">
-                <li>Executive KPI panel + trends</li>
-                <li>Drilldowns by area/system/workstream</li>
-                <li>Top issues/constraints list with owners</li>
-                <li>Weekly/PDF snapshot option (if desired)</li>
-              </ul>
+    <!-- APPLICATIONS -->
+    <section id="applications" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Applications</h2>
+          <p>
+            Mobile and web apps designed to simplify field data capture and improve reporting speed.
+          </p>
+        </div>
 
-              <div class="about-actions" style="margin-top:14px;">
-                <a class="btn btn-primary" href="index.html#contact">Request Info / Book a Call</a>
-                <a class="btn btn-ghost" href="#top">Back to Top</a>
-              </div>
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-body">
+              <h3>Inspection Tracking</h3>
+              <p>
+                Capture requests, status, priorities, and completions from the field with a simple workflow.
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-body">
+              <h3>NDE / QAQC Workflows</h3>
+              <p>
+                Centralize inspection logs, punch items, approvals, and reporting across disciplines.
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-body">
+              <h3>Leadership Reporting Tools</h3>
+              <p>
+                Turn field inputs into clean dashboards and weekly reporting without manual rework.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>About Shell Key</h2>
+          <p>
+            Shell Key builds digital systems for industrial project controls, reporting, and execution.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="card">
+            <div class="card-body">
+              <h3>What We Do</h3>
+              <p>
+                We help teams improve visibility across schedule, cost, progress, inspections, and field reporting.
+              </p>
+              <p>
+                Our solutions are designed for industrial capital projects, outages, maintenance, and construction execution.
+              </p>
             </div>
           </div>
 
-          <div class="detail-img">
-            <img class="zoomable" src="assets/hero/PM1.JPG" alt="Executive Summary Power BI dashboard example" data-full="assets/hero/PM1.JPG" loading="lazy" />
+          <div class="card">
+            <div class="card-body">
+              <h3>Why It Matters</h3>
+              <p>
+                Better data flow means faster reporting, stronger decision-making, and fewer surprises for project leadership.
+              </p>
+              <p>
+                From dashboards to mobile apps, Shell Key focuses on practical systems people will actually use.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- READINESS -->
-    <section id="readiness" class="section">
+    <!-- CONTACT -->
+    <section id="contact" class="section section-alt">
       <div class="container">
         <div class="section-head">
-          <h2>Readiness & Planning Dashboard</h2>
-          <p>Readiness scoring, gating items, and upcoming milestones so teams don’t get surprised in execution.</p>
+          <h2>Contact</h2>
+          <p>Request a demo or ask a question. We’ll respond fast.</p>
         </div>
 
-        <div class="detail-grid">
-          <div class="card seo-block">
+        <div class="contact-grid">
+          <div class="card contact-card">
             <div class="card-body">
-              <h3>What it does</h3>
+              <h3>Direct</h3>
+
               <p>
-                This dashboard shows whether work is actually ready to execute — not just “scheduled.”
-                It tracks constraints (materials, permits, access, engineering, inspection hold points), highlights upcoming
-                risk areas, and supports clean handoffs from planning to execution.
+                <strong>Email:</strong>
+                <a href="mailto:Kirby.Billiot@shellkey.company">
+                  Kirby.Billiot@shellkey.company
+                </a>
               </p>
 
-              <h3>Questions it answers</h3>
-              <ul class="bullets">
-                <li>What is ready to release next week — and what is blocked?</li>
-                <li>Which constraints are trending up and need escalation?</li>
-                <li>Which workstreams are missing critical inputs?</li>
-                <li>What’s the readiness score by area/system?</li>
-              </ul>
+              <p>
+                <strong>Phone:</strong>
+                <a href="tel:+13372548321">
+                  +1 (337) 254-8321
+                </a>
+              </p>
 
-              <div class="seo-kv">
-                <div class="kv">
-                  <strong>Best for</strong>
-                  Planners, readiness leads, coordinators, execution leadership
-                </div>
-                <div class="kv">
-                  <strong>Typical inputs</strong>
-                  Workpack list, constraint log, milestone dates, responsible owners, due dates
-                </div>
-              </div>
-
-              <h3>Common add-ons</h3>
-              <ul class="bullets">
-                <li>Readiness “gates” with pass/fail criteria</li>
-                <li>Automatic overdue alerts by owner</li>
-                <li>Weekly readiness report outputs</li>
-              </ul>
-
-              <div class="about-actions" style="margin-top:14px;">
-                <a class="btn btn-primary" href="index.html#contact">Request Info / Book a Call</a>
-                <a class="btn btn-ghost" href="#top">Back to Top</a>
-              </div>
+              <p class="muted">
+                Business hours: Mon–Fri 8am–5pm
+              </p>
             </div>
           </div>
 
-          <div class="detail-img">
-            <img class="zoomable" src="assets/hero/PM2.JPG" alt="Readiness and planning Power BI dashboard example" data-full="assets/hero/PM2.JPG" loading="lazy" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WALL CHART -->
-    <section id="wallchart" class="section section-alt">
-      <div class="container">
-        <div class="section-head">
-          <h2>Turnaround Wall Chart Dashboard</h2>
-          <p>A “digital wall chart” that keeps the full plan aligned from planning through execution.</p>
-        </div>
-
-        <div class="detail-grid">
-          <div class="card seo-block">
+          <div class="card contact-card">
             <div class="card-body">
-              <h3>What it does</h3>
-              <p>
-                This is your turnaround plan in a clean, executive-ready wall chart format — but digital, filterable,
-                and always current. It’s built to reduce confusion during fast-moving execution and keep workstreams aligned.
-              </p>
+              <h3>Quick Message</h3>
 
-              <h3>Questions it answers</h3>
-              <ul class="bullets">
-                <li>What are the major gates and milestones this week?</li>
-                <li>Which workstreams are slipping — and what’s driving it?</li>
-                <li>Where is the risk concentrated (area/system)?</li>
-                <li>Are we on track for the next major outage milestone?</li>
-              </ul>
+              <form id="contactForm" class="form">
+                <label>
+                  <span>Name</span>
+                  <input id="qName" type="text" placeholder="Your name" autocomplete="name" />
+                </label>
 
-              <div class="seo-kv">
-                <div class="kv">
-                  <strong>Best for</strong>
-                  Turnaround leadership, planners, execution managers, coordination meetings
-                </div>
-                <div class="kv">
-                  <strong>Typical inputs</strong>
-                  Milestone list, workstream plan, P6 schedule export, readiness/constraint signals
-                </div>
-              </div>
+                <label>
+                  <span>Email (optional)</span>
+                  <input id="qEmail" type="email" placeholder="you@example.com" autocomplete="email" />
+                </label>
 
-              <h3>Optional enhancements</h3>
-              <ul class="bullets">
-                <li>Risk ranking and readiness heat maps</li>
-                <li>Gate acceptance checklist tracking</li>
-                <li>Printable “meeting mode” views</li>
-              </ul>
+                <label>
+                  <span>Message</span>
+                  <textarea id="qMsg" rows="5" placeholder="How can we help?"></textarea>
+                </label>
 
-              <div class="about-actions" style="margin-top:14px;">
-                <a class="btn btn-primary" href="index.html#contact">Request Info / Book a Call</a>
-                <a class="btn btn-ghost" href="#top">Back to Top</a>
-              </div>
+                <button class="btn btn-primary" type="submit">Send Email</button>
+
+                <p class="muted tiny">
+                  Opens your default mail app. No account required on this website.
+                </p>
+              </form>
             </div>
-          </div>
-
-          <div class="detail-img">
-            <img class="zoomable" src="assets/hero/PM3.jpg" alt="Turnaround wall chart Power BI dashboard example" data-full="assets/hero/PM3.jpg" loading="lazy" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FIELD -->
-    <section id="field" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Daily Field Reporting Dashboard</h2>
-          <p>Turns daily updates into structured reporting for faster decisions and cleaner communication.</p>
-        </div>
-
-        <div class="detail-grid">
-          <div class="card seo-block">
-            <div class="card-body">
-              <h3>What it does</h3>
-              <p>
-                This dashboard converts field updates into a consistent, leadership-friendly view — progress, productivity,
-                blockers, and open issues. It reduces the time wasted chasing updates and supports better coordination across teams.
-              </p>
-
-              <h3>Questions it answers</h3>
-              <ul class="bullets">
-                <li>What was accomplished today and what is planned tomorrow?</li>
-                <li>Where did productivity drop — and what’s the reason?</li>
-                <li>What blockers are repeating and need escalation?</li>
-                <li>Which areas are trending behind expected progress?</li>
-              </ul>
-
-              <div class="seo-kv">
-                <div class="kv">
-                  <strong>Best for</strong>
-                  Field supervisors, construction managers, turnaround execution, coordinators
-                </div>
-                <div class="kv">
-                  <strong>Typical inputs</strong>
-                  Daily logs, quantity tracking, manpower, issues list, photos/notes (optional)
-                </div>
-              </div>
-
-              <h3>Common add-ons</h3>
-              <ul class="bullets">
-                <li>Photo evidence + proof links</li>
-                <li>Daily rollup report output (PDF/email-ready)</li>
-                <li>Standardized daily log templates (if you don’t have them)</li>
-              </ul>
-
-              <div class="about-actions" style="margin-top:14px;">
-                <a class="btn btn-primary" href="index.html#contact">Request Info / Book a Call</a>
-                <a class="btn btn-ghost" href="#top">Back to Top</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="detail-img">
-            <img class="zoomable" src="assets/hero/PM4.JPG" alt="Daily field reporting Power BI dashboard example" data-full="assets/hero/PM4.JPG" loading="lazy" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WORKPACK -->
-    <section id="workpack" class="section section-alt">
-      <div class="container">
-        <div class="section-head">
-          <h2>Workpack Control Dashboard</h2>
-          <p>Track workpacks end-to-end with proof, closeout readiness, and real accountability.</p>
-        </div>
-
-        <div class="detail-grid">
-          <div class="card seo-block">
-            <div class="card-body">
-              <h3>What it does</h3>
-              <p>
-                This dashboard tracks workpack status from planned → released → executed → closed, with proof and closeout readiness.
-                It creates visibility into workflow bottlenecks and helps teams stop losing time in handoffs.
-              </p>
-
-              <h3>Questions it answers</h3>
-              <ul class="bullets">
-                <li>How many workpacks are ready to release right now?</li>
-                <li>Which workpacks are stuck and why?</li>
-                <li>Are we closing work with proof and documentation?</li>
-                <li>What’s the trend of releases vs closes?</li>
-              </ul>
-
-              <div class="seo-kv">
-                <div class="kv">
-                  <strong>Best for</strong>
-                  Workpack owners, coordinators, turnaround controls, planners
-                </div>
-                <div class="kv">
-                  <strong>Typical inputs</strong>
-                  Workpack list, workflow statuses, proof attachments/links, closeout checklist items
-                </div>
-              </div>
-
-              <h3>Works with</h3>
-              <ul class="bullets">
-                <li>SharePoint lists, Excel logs, Power Apps, Adalo</li>
-                <li>P6 or schedule exports (optional)</li>
-              </ul>
-
-              <div class="about-actions" style="margin-top:14px;">
-                <a class="btn btn-primary" href="index.html#contact">Request Info / Book a Call</a>
-                <a class="btn btn-ghost" href="#top">Back to Top</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="detail-img">
-            <img class="zoomable" src="assets/hero/PM5.JPG" alt="Workpack control Power BI dashboard example" data-full="assets/hero/PM5.JPG" loading="lazy" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONSTRAINTS -->
-    <section id="constraints" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Constraints & Materials Dashboard</h2>
-          <p>See what’s holding work back — prioritize actions and remove blockers before they impact schedule.</p>
-        </div>
-
-        <div class="detail-grid">
-          <div class="card seo-block">
-            <div class="card-body">
-              <h3>What it does</h3>
-              <p>
-                This dashboard highlights constraints that slow execution — materials, permits, access, engineering, inspections, and more.
-                It drives accountability by showing owners, due dates, aging, and what constraints are causing the most schedule risk.
-              </p>
-
-              <h3>Questions it answers</h3>
-              <ul class="bullets">
-                <li>What constraints are blocking work today?</li>
-                <li>Which constraints are overdue and who owns them?</li>
-                <li>Which constraint types are trending up?</li>
-                <li>What’s the aging profile and top schedule risk drivers?</li>
-              </ul>
-
-              <div class="seo-kv">
-                <div class="kv">
-                  <strong>Best for</strong>
-                  Coordinators, planners, procurement, engineering, execution leadership
-                </div>
-                <div class="kv">
-                  <strong>Typical inputs</strong>
-                  Constraint log, owners, due dates, status, category/type, affected workpacks
-                </div>
-              </div>
-
-              <h3>Optional enhancements</h3>
-              <ul class="bullets">
-                <li>Aging + root cause tracking</li>
-                <li>Action effectiveness (did we actually remove the blocker?)</li>
-                <li>Escalation lists for daily coordination</li>
-              </ul>
-
-              <div class="about-actions" style="margin-top:14px;">
-                <a class="btn btn-primary" href="index.html#contact">Request Info / Book a Call</a>
-                <a class="btn btn-ghost" href="#top">Back to Top</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="detail-img">
-            <img class="zoomable" src="assets/hero/PM6.JPG" alt="Constraints and materials Power BI dashboard example" data-full="assets/hero/PM6.JPG" loading="lazy" />
           </div>
         </div>
       </div>
@@ -553,25 +283,11 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div class="muted">© 2026 shellkey.company — Dashboards & Digital Project Controls</div>
+      <div class="muted">© 2025 Shell Key. All rights reserved.</div>
     </div>
   </footer>
 
-  <!-- Fullscreen Image Viewer -->
-  <div class="viewer" id="viewer" aria-hidden="true">
-    <div class="viewer-backdrop" id="viewerBackdrop"></div>
-    <div class="viewer-ui">
-      <button class="viewer-btn" id="viewerClose" aria-label="Close image">✕</button>
-      <a class="viewer-btn" id="viewerOpenNew" href="#" target="_blank" rel="noopener" aria-label="Open image in new tab">↗</a>
-      <button class="viewer-btn" id="viewerReset" aria-label="Reset zoom">⟲</button>
-    </div>
-    <div class="viewer-stage" id="viewerStage">
-      <img id="viewerImg" alt="Expanded view" />
-    </div>
-  </div>
-
   <script>
-    // Mobile Nav
     const navToggle = document.getElementById("navToggle");
     const navLinks = document.getElementById("navLinks");
 
@@ -587,108 +303,41 @@
       navToggle.setAttribute("aria-expanded", String(isOpen));
     });
 
-    document.querySelectorAll(".nav-link").forEach(a => a.addEventListener("click", () => closeMenu()));
-    document.addEventListener("click", (e) => { if (!e.target.closest(".nav")) closeMenu(); });
+    document.querySelectorAll(".nav-link").forEach((a) => {
+      a.addEventListener("click", closeMenu);
+    });
 
-    // Viewer
-    const viewer = document.getElementById("viewer");
-    const viewerImg = document.getElementById("viewerImg");
-    const viewerBackdrop = document.getElementById("viewerBackdrop");
-    const viewerClose = document.getElementById("viewerClose");
-    const viewerOpenNew = document.getElementById("viewerOpenNew");
-    const viewerReset = document.getElementById("viewerReset");
-    const stage = document.getElementById("viewerStage");
-
-    let scale = 1, translateX = 0, translateY = 0;
-
-    function applyTransform() {
-      viewerImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
-    }
-    function resetTransform() {
-      scale = 1; translateX = 0; translateY = 0; applyTransform();
-    }
-    function openViewer(src) {
-      viewerImg.src = src;
-      viewerOpenNew.href = src;
-      resetTransform();
-      viewer.classList.add("open");
-      viewer.setAttribute("aria-hidden", "false");
-      document.body.classList.add("no-scroll");
-    }
-    function closeViewer() {
-      viewer.classList.remove("open");
-      viewer.setAttribute("aria-hidden", "true");
-      document.body.classList.remove("no-scroll");
-      viewerImg.src = "";
-    }
-
-    document.querySelectorAll(".zoomable").forEach(img => {
-      img.addEventListener("click", (e) => {
+    const contactForm = document.getElementById("contactForm");
+    if (contactForm) {
+      contactForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        openViewer(img.getAttribute("data-full") || img.src);
+
+        const name = document.getElementById("qName").value.trim();
+        const email = document.getElementById("qEmail").value.trim();
+        const msg = document.getElementById("qMsg").value.trim();
+
+        const subject = "Shell Key Website Inquiry";
+
+        const body = encodeURIComponent(
+          [
+            "Hi Kirby,",
+            "",
+            "I would like to request a demo / ask a question:",
+            "",
+            `Name: ${name || "(not provided)"}`,
+            `Email: ${email || "(not provided)"}`,
+            "",
+            "Message:",
+            msg || "(no message entered)",
+            "",
+            "Sent from shellkey.company",
+          ].join("\n")
+        );
+
+        window.location.href =
+          `mailto:support@shellkey.company?subject=${encodeURIComponent(subject)}&body=${body}`;
       });
-    });
-
-    viewerBackdrop.addEventListener("click", closeViewer);
-    viewerClose.addEventListener("click", closeViewer);
-    viewerReset.addEventListener("click", resetTransform);
-    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && viewer.classList.contains("open")) closeViewer(); });
-
-    // Drag + zoom
-    let isDragging = false, startX = 0, startY = 0;
-    let pinchStartDist = 0, pinchStartScale = 1;
-
-    function dist(t1, t2) { return Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY); }
-
-    stage.addEventListener("touchstart", (e) => {
-      if (!viewer.classList.contains("open")) return;
-      if (e.touches.length === 2) {
-        pinchStartDist = dist(e.touches[0], e.touches[1]);
-        pinchStartScale = scale;
-      } else if (e.touches.length === 1) {
-        isDragging = true;
-        startX = e.touches[0].clientX - translateX;
-        startY = e.touches[0].clientY - translateY;
-      }
-    }, { passive: true });
-
-    stage.addEventListener("touchmove", (e) => {
-      if (!viewer.classList.contains("open")) return;
-      if (e.touches.length === 2) {
-        const factor = dist(e.touches[0], e.touches[1]) / pinchStartDist;
-        scale = Math.min(6, Math.max(1, pinchStartScale * factor));
-        applyTransform();
-      } else if (e.touches.length === 1 && isDragging) {
-        translateX = e.touches[0].clientX - startX;
-        translateY = e.touches[0].clientY - startY;
-        applyTransform();
-      }
-    }, { passive: true });
-
-    stage.addEventListener("touchend", () => { isDragging = false; pinchStartDist = 0; });
-
-    stage.addEventListener("mousedown", (e) => {
-      if (!viewer.classList.contains("open")) return;
-      isDragging = true;
-      startX = e.clientX - translateX;
-      startY = e.clientY - translateY;
-    });
-
-    window.addEventListener("mousemove", (e) => {
-      if (!isDragging) return;
-      translateX = e.clientX - startX;
-      translateY = e.clientY - startY;
-      applyTransform();
-    });
-
-    window.addEventListener("mouseup", () => { isDragging = false; });
-
-    stage.addEventListener("wheel", (e) => {
-      if (!viewer.classList.contains("open")) return;
-      e.preventDefault();
-      scale = Math.min(6, Math.max(1, scale + (Math.sign(e.deltaY) < 0 ? 0.15 : -0.15)));
-      applyTransform();
-    }, { passive: false });
+    }
   </script>
 </body>
 </html>
